@@ -1,0 +1,32 @@
+#parse("template/constantes-impresora.vm")
+#parse("template/macros.vm")
+#define($COLUMNAS)${GS}P${writer.write(32)}${writer.write(32)}#end
+#define($COL_DET_1)${ESC}${writer.write(36)}${writer.write(18)}${writer.write(0)}#end
+#define($COL_DET_2)${ESC}${writer.write(36)}${writer.write(37)}${writer.write(0)}#end
+#define($COL_DET_3)${ESC}${writer.write(36)}${writer.write(75)}${writer.write(0)}#end
+## Inicia ticket
+#ALINEAR_CENTRO()#INICIO_ESTILO(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)${compania.shortName} #FIN_ESTILO()
+${COLUMNAS}
+#LINEA_SEPARACION_SIMPLE()
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} 0 0)COTIZACION ${COL_DET_3}${cotizacionId}#FIN_ESTILO()${CR}
+#LINEA_SEPARACION_SIMPLE()
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0 0)     SUCURSAL: #FIN_ESTILO()${CR} #INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${thisSite.nombre}${COL_DET_3}${date}#FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0 0)    TELEFONOS: #FIN_ESTILO()${CR} #INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${thisSite.telefonos} #FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0 0)      ELABORO: #FIN_ESTILO()${CR} #INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${empleado} #FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0 0)       NOMBRE: #FIN_ESTILO()${CR} #INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${nombre} #FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0 0)OBSERVACIONES: #FIN_ESTILO()${CR} #INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${observaciones} #FIN_ESTILO()${CR}
+${LF}
+${COLUMNAS}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 ${SUBRAYADO})ARTICULO${COL_DET_3}PRECIO
+
+#foreach( $articulo in $articulos )#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${articulo.articulo}${COL_DET_3}${articulo.precio}${asteriscoConvenio}#FIN_ESTILO()${LF}#end
+
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0 0)${letrero}  ${COL_DET_3}${total} #FIN_ESTILO()${CR}
+${LF}
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${notaConvenio}${COL_DET_3}
+${LF}
+#ALINEAR_CENTRO()#INICIO_ESTILO(${FUENTE_B} 0 0 0)PRECIOS VALIDOS PRESENTANDO ESTE DOCUMENTO${CR}${LF}
+#ALINEAR_CENTRO()#INICIO_ESTILO(${FUENTE_A} ${DOBLE_ALTURA} 16 0)VIGENTE HASTA EL DIA ${nextDate}#FIN_ESTILO()${CR}
+#LINEA_SEPARACION_SIMPLE()
+#AVANZAR_LINEAS(4)
+#CORTE()

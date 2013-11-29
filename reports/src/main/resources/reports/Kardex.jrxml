@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Kardex" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7b441e23-6b69-4348-8863-75c7541f2cb0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="fechaInicio" class="java.lang.String"/>
+	<parameter name="fechaActual" class="java.lang.String"/>
+	<parameter name="fechaFin" class="java.lang.String"/>
+	<parameter name="sucursal" class="java.lang.String"/>
+	<parameter name="articuloSku" class="java.lang.String"/>
+	<parameter name="articuloArticulo" class="java.lang.String"/>
+	<parameter name="articuloDescripcion" class="java.lang.String"/>
+	<parameter name="articuloPrecio" class="java.math.BigDecimal"/>
+	<parameter name="lstKardex" class="java.util.List"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/benjamin/soi/jpv/reports/src/main/resources/reports/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="existenciaInicial" class="java.lang.Integer"/>
+	<parameter name="existenciaActual" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="5220a4ba-d547-4498-86ab-6ade7af30d88" style="Title" x="110" y="30" width="77" height="18"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<text><![CDATA[SUCURSAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5220a4ba-d547-4498-86ab-6ade7af30d88" style="Title" x="412" y="13" width="15" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<text><![CDATA[AL]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="ffe6a895-d208-477d-895d-2e075cc94b0d" x="9" y="60" width="554" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="5220a4ba-d547-4498-86ab-6ade7af30d88" style="Title" x="110" y="13" width="242" height="17"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE KARDEX DEL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5220a4ba-d547-4498-86ab-6ade7af30d88" style="Title" x="491" y="30" width="35" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<text><![CDATA[Pag:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="65675e50-6ccf-4a9b-b6da-bfc9afe626b0" x="190" y="30" width="247" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sucursal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="653d5a51-a221-47bf-8841-621b2a21d24f" x="352" y="13" width="60" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaInicio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm a">
+				<reportElement uuid="bb239c15-560d-4dab-a13b-4bee54bb51c7" x="9" y="13" width="68" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaActual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6c7fbabe-75a6-47ed-8d49-88a243190f07" x="526" y="30" width="37" height="18"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ee38d4d1-f1ae-40d4-9e3c-649ad791122b" x="427" y="13" width="65" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaFin}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="b86a4d91-a506-4518-85ba-43c3ca87629c" x="9" y="1" width="554" height="1"/>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="137" splitType="Stretch">
+			<textField>
+				<reportElement uuid="2b364db0-7a73-420f-b58d-f3c1c11584c0" x="25" y="20" width="52" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{articuloSku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e63d9425-95b9-4ee9-b545-ba87eb317d71" x="77" y="20" width="113" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{articuloArticulo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="eec075d2-5929-4cd0-878e-f1a77e51c383" x="193" y="20" width="266" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{articuloDescripcion}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00">
+				<reportElement uuid="3882b2b7-7a57-42f8-b1a5-0997977584a4" x="459" y="20" width="100" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{articuloPrecio}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="70e5e5eb-f7bf-4292-85ea-db06631e1ba8" x="0" y="83" width="572" height="51"/>
+				<subreportParameter name="existenciaInicial">
+					<subreportParameterExpression><![CDATA[$P{existenciaInicial}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstKardex})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/Kardex_Detalle.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="85736524-5358-439c-9804-ca21dde8c22d" x="25" y="6" width="52" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SKU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="10004fc3-f0ee-4656-a3d7-305019c13b50" x="77" y="6" width="113" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Artículo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c6ee7e6c-52a0-4ff6-a075-8ca56591e6cc" x="193" y="6" width="266" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ff3aaf75-0d51-4eee-b3fb-b8cdc30b4d89" x="459" y="6" width="100" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="149f3d08-b724-4844-8434-1fa8ad4ed82e" x="25" y="44" width="100" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Existencia Inicial:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="867dc162-86a4-4e46-86d2-597f89a1c035" x="214" y="44" width="100" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Existencia Actual:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="5b71bcc8-7476-476e-81ef-e394e26df7b0" x="125" y="44" width="68" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{existenciaInicial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="786387ae-8dae-4e64-8739-04a5ef56fff4" x="314" y="44" width="68" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{existenciaActual}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

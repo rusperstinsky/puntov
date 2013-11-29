@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Examenes_Por_Optometrista_Det" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="20e06694-9af2-4c95-82c2-3fa7b422dacd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="idEmpleado" class="java.lang.String"/>
+	<field name="nombreEmpleado" class="java.lang.String"/>
+	<field name="total" class="java.lang.String"/>
+	<field name="rxConVenta" class="java.lang.String"/>
+	<field name="rxCotizacion" class="java.lang.String"/>
+	<field name="rxSinVenta" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="12" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="2e04497a-a63f-4008-a0a6-3393b6e25541" x="0" y="0" width="214" height="12"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Empleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="682699eb-3576-483d-bdac-395ffc34a596" x="214" y="0" width="66" height="12"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="290539d3-5c33-4e1b-82b6-40a75613e4f4" x="280" y="0" width="74" height="12"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Venta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4573c645-bc71-424c-b93c-5faf777c1e04" x="354" y="0" width="77" height="12"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cotizacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="178e2f6c-7c5d-4236-bcb0-0751c573890d" x="431" y="0" width="70" height="12"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Venta]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<textField>
+				<reportElement uuid="89aaec70-110a-4160-8628-7d7fdc271169" x="54" y="0" width="160" height="12"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEmpleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="18f79505-03e2-4332-8946-8943081fff05" x="0" y="0" width="54" height="12"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idEmpleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3f54232e-2607-418b-99a6-92e0e39c3485" x="214" y="0" width="66" height="12"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="475ddccc-638d-4168-80ec-e27d22df1f05" x="280" y="0" width="74" height="12"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rxConVenta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2325ca2e-2490-452f-b0fc-582d0b6367bb" x="354" y="0" width="77" height="12"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rxCotizacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="75cec253-a82c-461b-aea0-63b015e94865" x="431" y="0" width="70" height="12"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rxSinVenta}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

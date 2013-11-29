@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="Control_de_Trabajos_Lista" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612"
+              leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2b4b2fea-ff59-454f-b2f7-2d4ee7c08655">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <field name="id" class="java.lang.String"/>
+    <field name="fecha" class="java.util.Date"/>
+    <field name="tipo" class="java.lang.String"/>
+    <field name="saldo" class="java.math.BigDecimal"/>
+    <field name="contactos" class="java.lang.Integer"/>
+    <field name="material" class="java.lang.String"/>
+    <variable name="id_1" class="java.lang.Integer" calculation="Count">
+        <variableExpression><![CDATA[$F{id}]]></variableExpression>
+    </variable>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="14" splitType="Stretch">
+            <staticText>
+                <reportElement uuid="36a238e0-a88e-426a-b51d-9e44d1a43ac4" x="167" y="0" width="58" height="14"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Contactos]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="5a400734-e963-4b73-a4e8-930798f19340" x="301" y="0" width="80" height="14"/>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Material]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="1162af77-3b44-425d-b9c2-2169c0b9412e" x="0" y="0" width="54" height="14"/>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Numero]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="30c80cf3-5de2-43ea-adb7-c08308659dd1" x="120" y="0" width="47" height="14"/>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Tipo]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="d04f5465-909f-4513-a12c-f8bad3163a5a" x="54" y="0" width="66" height="14"/>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Fecha]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="302746b7-7f0b-49f9-9003-1dd88a5f7abd" x="225" y="0" width="66" height="14"/>
+                <textElement textAlignment="Right">
+                    <font fontName="DejaVu Sans" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Saldo]]></text>
+            </staticText>
+        </band>
+    </title>
+    <detail>
+        <band height="14" splitType="Stretch">
+            <textField isBlankWhenNull="true">
+                <reportElement uuid="d8b9bb96-650d-4cc1-867e-74dff4cb910f" x="0" y="0" width="54" height="14"/>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="9"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+            </textField>
+            <textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+                <reportElement uuid="1a5ac59c-83e8-4f3b-a91c-5a575669dd7a" x="54" y="0" width="66" height="14"/>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="9"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement uuid="8b897036-b1c5-4255-bbbf-7dd959ce1688" x="120" y="0" width="47" height="14"/>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="9"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement uuid="622b5d56-c4ac-4a68-a5e5-c4d33b6cd14f" x="167" y="0" width="58" height="14"/>
+                <textElement textAlignment="Center">
+                    <font fontName="DejaVu Sans" size="9"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{contactos}]]></textFieldExpression>
+            </textField>
+            <textField pattern="$#,##0.00" isBlankWhenNull="true">
+                <reportElement uuid="561b2535-9188-42b2-8843-61506d6f4761" x="225" y="0" width="66" height="14"/>
+                <textElement textAlignment="Right">
+                    <font fontName="DejaVu Sans" size="9"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{saldo}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement uuid="60cc119b-c766-477f-a68f-e1d47a036ce5" x="301" y="0" width="80" height="14"/>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="9"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{material}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <summary>
+        <band height="29">
+            <textField isBlankWhenNull="true">
+                <reportElement uuid="d40099b1-4f0d-40dc-915f-bfeef6cb55d0" x="144" y="1" width="81" height="14"/>
+                <textElement/>
+                <textFieldExpression><![CDATA[$V{id_1}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement uuid="be132306-fa81-46eb-aba6-ee26b9348e24" x="0" y="1" width="144" height="14"/>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Subtotal:]]></text>
+            </staticText>
+            <line>
+                <reportElement uuid="7c7ba908-5506-47b4-8814-f5db31370925" x="0" y="0" width="381" height="1"/>
+                <graphicElement>
+                    <pen lineStyle="Dashed"/>
+                </graphicElement>
+            </line>
+        </band>
+    </summary>
+</jasperReport>

@@ -1,0 +1,55 @@
+#parse("template/constantes-impresora.vm")
+#parse("template/macros.vm")
+#define($COLUMNAS)${GS}P${writer.write(32)}${writer.write(32)}#end
+#define($COL_DET_1)${ESC}${writer.write(36)}${writer.write(8)}${writer.write(0)}#end
+#define($COL_DET_2)${ESC}${writer.write(36)}${writer.write(22)}${writer.write(0)}#end
+#define($COL_DET_3)${ESC}${writer.write(36)}${writer.write(36)}${writer.write(0)}#end
+#define($COL_DET_4)${ESC}${writer.write(36)}${writer.write(50)}${writer.write(0)}#end
+#define($COL_DET_5)${ESC}${writer.write(36)}${writer.write(64)}${writer.write(0)}#end
+#define($COL_DET_6)${ESC}${writer.write(36)}${writer.write(78)}${writer.write(0)}#end
+#define($COL_DET_7)${ESC}${writer.write(36)}${writer.write(70)}${writer.write(0)}#end
+#define($COL_DIST_1)${ESC}${writer.write(36)}${writer.write(25)}${writer.write(0)}#end
+#define($COL_DIST_2)${ESC}${writer.write(36)}${writer.write(39)}${writer.write(0)}#end
+#define($COL_DIST_3)${ESC}${writer.write(36)}${writer.write(70)}${writer.write(0)}#end
+## Inicia ticket
+${COLUMNAS}
+#SEPARACION()
+#INICIO_ESTILO(${FUENTE_A} ${NEGRITA} 4 6 0)MATERIAL #FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_A} ${NEGRITA} 4 6 0)DEL CLIENTE ${COL_DET_6}${id_nota}#FIN_ESTILO()${CR}
+#SEPARACION()${LF}
+#ETIQUETA("SUCURSAL:")#SET_STYLE(${FUENTE_B} 0 0 0 0) ${infoTienda.sucursal}${COL_DET_5}${infoTienda.fecha}
+#ETIQUETA_VALOR("TELEFONO:" "#altnull(${infoTienda.telefono})")
+#ETIQUETA_VALOR("EMPLEADO:" "#altnull(${infoTienda.empleado})")
+#SEPARACION()${LF}
+#ETIQUETA_VALOR("CLIENTE:" "#altnull(${infoCliente.nombre})")
+#ETIQUETA_VALOR("DOMICILIO:" "#altnull(${infoCliente.domicilio})")
+#ETIQUETA_VALOR("COLONIA:" "#altnull(${infoCliente.colonia})")
+#ETIQUETA_VALOR("CP:" "#altnull(${infoCliente.cp})")
+#ETIQUETA("TELEFONOS")${CR}
+${COL_DET_1}#ETIQUETA_VALOR("CASA:" "#altnull(${infoCliente.telCasa})")
+${COL_DET_1}#ETIQUETA("TRABAJO:")#SET_STYLE(${FUENTE_B} 0 0 0 0) ${infoCliente.telTrab}${COL_DET_4}#ETIQUETA("ext:")#SET_STYLE(${FUENTE_B} 0 0 0 0) ${infoCliente.extTrab}${CR}
+${COL_DET_1}#ETIQUETA("ADICIONAL:")#SET_STYLE(${FUENTE_B} 0 0 0 0) ${infoCliente.telAd}${COL_DET_4}#ETIQUETA("ext:")#SET_STYLE(${FUENTE_B} 0 0 0 0) ${infoCliente.extAd}${CR}
+#SEPARACION()${LF}
+#ETIQUETA_VALOR("FACTURA:" "#altnull(${infoDejo.factura})")
+#ETIQUETA_VALOR("DEJO:" "#altnull(${infoDejo.dejo})")
+#ETIQUETA_VALOR("SERVICIO:" "#altnull(${infoDejo.servicio})")
+#ETIQUETA_VALOR("INSTRUCCIONES:" "#altnull(${infoDejo.instruccion})")
+------------------------------------------
+#ETIQUETA("CONDICIONES GENERALES:")${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0) ${infoDejo.condiciones}${CR}
+#FIRMA("${infoCliente.nombre}")
+------------------------------------------
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)NOTA:
+${COL_DET_1}#SET_STYLE(${FUENTE_B} 0 0 0 0)Todos estos trabajos se hacen si el cliente
+${COL_DET_1}#SET_STYLE(${FUENTE_B} 0 0 0 0)acepta el riesgo de deterioro que pueda sufrir
+${COL_DET_1}#SET_STYLE(${FUENTE_B} 0 0 0 0)su anteojo para lo cual pedimos su ACEPTACION.${CR}
+${COL_DET_1}#SET_STYLE(${FUENTE_B} 0 0 0 0)Acepto condiciones en las que dejo mi producto y
+${COL_DET_1}#SET_STYLE(${FUENTE_B} 0 0 0 0)me doy por enterado del riesgo o deterioro que
+${COL_DET_1}#SET_STYLE(${FUENTE_B} 0 0 0 0)pueda sufrir el mismo a causa de la manipulacion
+${COL_DET_1}#SET_STYLE(${FUENTE_B} 0 0 0 0)para su habilitacion o reparacion.
+#FIRMA("${infoCliente.nombre}")
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)DOY MI ACEPTACION
+#FIRMA("${firmaGerente}")
+#ALINEAR_IZQUIERDA()#SEPARACION()
+#AVANZAR_LINEAS(5)
+#CORTE()

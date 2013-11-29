@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cancelaciones_Completo_Detalle" language="groovy" pageWidth="756" pageHeight="792" columnWidth="756" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="01fa0013-daa1-4e69-bc92-428117703c4b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="85"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/opticalux/proyectos/jpv/reports/src/main/resources/reports/"]]></defaultValueExpression>
+	</parameter>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="idEmpleado" class="java.lang.String"/>
+	<field name="facturasVendedor" class="java.util.List"/>
+	<field name="cancelaciones" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="14">
+			<staticText>
+				<reportElement uuid="8adba80b-7522-480d-9a4c-04a3d48ca8ca" x="419" y="0" width="45" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cf552974-a475-4a46-b9df-6d8cc13da15f" x="185" y="0" width="72" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Venta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8adba80b-7522-480d-9a4c-04a3d48ca8ca" x="257" y="0" width="113" height="14"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Cancelacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8adba80b-7522-480d-9a4c-04a3d48ca8ca" x="467" y="0" width="143" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Articulo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8adba80b-7522-480d-9a4c-04a3d48ca8ca" x="370" y="0" width="49" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No. Mod]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f7cdd9cc-f457-4095-854c-7bed2ff14e3d" x="0" y="0" width="175" height="14"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vendedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c668d7af-27dc-45d6-9fd0-e7e153b51a3f" x="645" y="0" width="130" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cancelo]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="3f8d0030-ae25-4f31-a2e1-8bd6a8792eca" x="0" y="0" width="43" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{cancelaciones} > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idEmpleado}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="eb1b853a-65bc-4dc6-955d-568f866d60b3" x="43" y="0" width="132" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{cancelaciones} > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="9797ba56-c675-4b2d-b7aa-8b03e82c68fc" x="185" y="0" width="570" height="14"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{facturasVendedor})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/Cancelaciones_Completo_Lista.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

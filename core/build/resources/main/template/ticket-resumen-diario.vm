@@ -1,0 +1,158 @@
+#parse("template/constantes-impresora.vm")
+#parse("template/macros.vm")
+#define($COLUMNAS)${GS}P${writer.write(32)}${writer.write(32)}#end
+#define($COLUMNA_0)${ESC}${writer.write(36)}${writer.write(0)}${writer.write(0)}#end
+#define($COLUMNA_1)${ESC}${writer.write(36)}${writer.write(10)}${writer.write(0)}#end
+#define($COLUMNA_2)${ESC}${writer.write(36)}${writer.write(20)}${writer.write(0)}#end
+#define($COLUMNA_3)${ESC}${writer.write(36)}${writer.write(30)}${writer.write(0)}#end
+#define($COLUMNA_4)${ESC}${writer.write(36)}${writer.write(40)}${writer.write(0)}#end
+#define($COLUMNA_5)${ESC}${writer.write(36)}${writer.write(50)}${writer.write(0)}#end
+#define($COLUMNA_6)${ESC}${writer.write(36)}${writer.write(60)}${writer.write(0)}#end
+#define($COLUMNA_7)${ESC}${writer.write(36)}${writer.write(70)}${writer.write(0)}#end
+## Inicia ticket
+${COLUMNAS}#ALINEAR_CENTRO()#SEPARACION()${LF}
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)RESUMEN DIARIO${LF}
+#RESET_TEXTO()#DO()#SEPARACION()${LF}
+#FUENTE_B()#DO()#ALINEAR_IZQUIERDA()
+SUCURSAL: ${nombre_sucursal} [${id_sucursal}] #ALINEAR_DERECHA()${COLUMNA_7} ${fecha_cierre}
+#RESET_TEXTO()#DO()#SEPARACION()${LF}
+#FUENTE_B()#DO()#ALINEAR_IZQUIERDA()
+#if($estado_cierre_diario=='a') ABIERTO#else CERRADO#end#ALINEAR_DERECHA()${COLUMNA_7}#if($estado_cierre_diario=='c') ${hora_cierre}#end
+
+#RESET_TEXTO()#DO()#SEPARACION()${LF}
+
+#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()VENTAS${LF}
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_1}Venta bruta${COLUMNA_4}${cantidad_ventas_brutas}#ALINEAR_DERECHA()${COLUMNA_5}${importe_ventas_brutas}
+${COLUMNA_1}Descuentos${COLUMNA_4}${cantidad_modificaciones}${COLUMNA_5}${importe_modificaciones}
+${COLUMNA_1}Cancelaciones${COLUMNA_4}${cantidad_cancelaciones}${COLUMNA_5}${importe_cancelaciones}
+${COLUMNA_1}IVA#DO()${COLUMNA_5}${iva_vigente}
+${COLUMNA_1}Venta neta${COLUMNA_4}${cantidad_venta_neta}${COLUMNA_5}${importe_venta_neta}
+
+#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()DESCUENTOS APLICADOS${LF}
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_1}Importe Neto${COLUMNA_4}${cantidad_modificaciones_netas}${COLUMNA_5}${importe_modificaciones_netas}
+
+#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()INGRESOS${LF}
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_1}Ingresos brutos#ALINEAR_DERECHA()${COLUMNA_5}${importe_ingresos_brutos}
+${COLUMNA_1}Devoluciones#ALINEAR_DERECHA()${COLUMNA_5}${importe_devoluciones}
+${COLUMNA_1}Ingresos netos#ALINEAR_DERECHA()${COLUMNA_5}${importe_ingresos_netos}
+
+#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()EFECTIVO${LF}
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_1}Recibido${COLUMNA_5}${importe_efectivo_recibido}
+${COLUMNA_1}Pagos externos${COLUMNA_5}${importe_efectivo_externos}
+${COLUMNA_1}Devoluciones${COLUMNA_5}${importe_efectivo_devoluciones}
+${COLUMNA_1}Neto${COLUMNA_5}${importe_efectivo_neto}
+#if( $exist_vales != '' )
+
+#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()VALES MN${LF}
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_0}Factura${COLUMNA_1}  No. Vale${COLUMNA_3}   Importe
+#foreach( $vale in $ventas_vales )
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_0}${vale.factura}${COLUMNA_1}  ${vale.referencia}${COLUMNA_3}${vale.importe}
+#end
+#end
+#if( $exist_vales != '' )#RESET_TEXTO()#FUENTE_B()#DO()Total: ${COLUMNA_3}${monto_vales_pesos}#end${LF}
+#if( $exist_vales != '' )
+#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()VALES USD${LF}
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_0}Factura${COLUMNA_1}  No. Vale${COLUMNA_3}   Importe${COLUMNA_5}   Dolares
+#foreach( $vale in $ventas_vales_usd )
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_0}${vale.factura}${COLUMNA_1}  ${vale.referencia}${COLUMNA_3}${vale.importe}${COLUMNA_5}${vale.dolares}
+#end
+#end
+#if( $exist_vales != '' )#RESET_TEXTO()#FUENTE_B()#DO()Total: ${COLUMNA_3}${monto_en_pesos_usd}${COLUMNA_5}${monto_vales_usd}#end${LF}
+#if( $artSinExis )
+#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()EXISTENCIAS AL ${today}${LF}
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_0}SKU${COLUMNA_1}Articulo${COLUMNA_5}    Precio${COLUMNA_7}  Exist.
+#foreach( $ase in $artSinExis )
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_0}${ase.id}${COLUMNA_1}${ase.articulo}${COLUMNA_5}${ase.descripcion}${COLUMNA_7}    ${ase.cantExistencia}
+#end
+#end
+
+#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()TIPO DE CAMBIO${LF}
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_1}USD${COLUMNA_5}${tipo_cambio_USD}
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_1}EUR${COLUMNA_5}${tipo_cambio_EUR}
+
+#* DOLARES *#
+#if( $importe_dolares_recibido != '0' or $importe_dolares_devoluciones != '0' or $importe_dolares_pesos != '0' )
+#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()DOLARES${LF}
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_1}Cantidad recibida(USD)${COLUMNA_5}${importe_dolares_recibido}
+${COLUMNA_1}Devoluciones${COLUMNA_5}${importe_dolares_devoluciones}
+${COLUMNA_1}Importe en pesos(MXN)${COLUMNA_5}${importe_dolares_pesos}
+#end
+#* DEPOSITOS *#
+#if( $depositos )#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()DEPOSITOS${LF}
+#foreach( $deposito in $depositos )#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_1}Fecha: ${deposito.fechaCierre}${COLUMNA_5}${deposito.empleado.nombre}${COLUMNA_7}${deposito.tipoDeposito}
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_1}${deposito.referencia}${LF}#end
+
+#if( $faltanteMN )#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_1}Faltante MXN: ${faltanteMN}#end
+#if( $sobranteMN )#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_1}Sobrante MXN: ${sobranteMN}#end${LF}
+#if( $faltanteUS )#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_1}Faltante USD: ${faltanteUS}#end
+#if( $sobranteUS )#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_1}Sobrante USD: ${sobranteUS}#end${LF}
+#end
+#* RESUMEN TERMINALES*#
+#if( $resumen_terminales )#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()TERMINALES${LF}
+#foreach( $resumen_terminal in $resumen_terminales )
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_1}${resumen_terminal.idTerminal}${COLUMNA_3}#if( $resumen_terminal.plan != '0' )  ${resumen_terminal.plan} USD#end${COLUMNA_5}${resumen_terminal.formaPago.descripcion}
+#end
+#end
+
+#if( $retornos )#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()RETORNOS${LF}
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_0}No.${COLUMNA_1}Importe${COLUMNA_4}Ticket
+#foreach( $retorno in $retornos )
+
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_0}${retorno.folio}${COLUMNA_1}${retorno.importe}${COLUMNA_4}${retorno.ticket}
+${COLUMNA_1}Sku${COLUMNA_4}Cantidad
+#foreach( $det in $retorno.detalles )${COLUMNA_1}${det.sku}${COLUMNA_4}${det.cantidad}${LF}#end
+#end
+#end
+
+#if( $notas_credito )#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()NOTAS DE CREDITO APLICADAS${LF}
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_0}Factura${COLUMNA_2}Origen${COLUMNA_4}Importe
+#foreach( $notaCredito in $notas_credito )
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_0}${notaCredito.factura}${COLUMNA_2}${notaCredito.clave}${COLUMNA_4}${notaCredito.monto}
+#end
+#end
+
+#if( $ventas_empleado )#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()VENTAS DE EMPLEADO${LF}
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_0}Factura${COLUMNA_2}Cuenta${COLUMNA_4}Importe
+#foreach( $venta in $ventas_empleado )
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_0}${venta.factura}${COLUMNA_2}${venta.idBancoEmisor}${COLUMNA_4}${venta.monto}
+#end
+#end
+
+#* VALES *#
+#RESET_TEXTO()#FUENTE_B()#DO()${COLUMNA_0}VALES: ${numero_vales}${COLUMNA_2}POR: ${monto_vales}
+#if( $vales )
+#NEGRITA()#DO()${COLUMNA_1}FACTURA${COLUMNA_3}CONVENIO${COLUMNA_5}MONTO
+#foreach( $vale in $vales )#SIN_NEGRITA()#SIN_SUBRAYADO()#DO()${COLUMNA_1}${vale.notaVenta.factura}${COLUMNA_3}${vale.notaVenta.idConvenio}${COLUMNA_5}${vale.referenciaPago}#end
+#end
+
+#RESET_TEXTO()#DO()#SEPARACION()${LF}#FUENTE_B()#DO()
+#NEGRITA()#DO()Total Comprobantes: ${totalComprobantes}
+#NEGRITA()#DO()Inicial: #SIN_NEGRITA()#DO()${comprobantesInicial}${COLUMNA_4}#NEGRITA()#DO()Final: #SIN_NEGRITA()#DO()${comprobantesFinal}${LF}
+
+#if("$!pagosExternos"!="")
+#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()PAGOS EXTERNOS${LF}
+#RESET_TEXTO()#FUENTE_B()#NEGRITA()#DO()FACTURA${COLUMNA_2}SUCURSAL${COLUMNA_7}MONTO
+#foreach( $pagoExterno in $pagosExternos )
+#SIN_NEGRITA()#DO()${pagoExterno.formaPago.descripcion}
+${pagoExterno.factura}${COLUMNA_2}${pagoExterno.externo.origen}${COLUMNA_7}${pagoExterno.referencia}
+#end
+#NEGRITA()#DO()${COLUMNA_4}Total: ${COLUMNA_7}${totalPagosExternos}
+#end
+
+#if("$!entregadosExternos"!="")
+#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()ENTREGADOS EXTERNOS${LF}
+#RESET_TEXTO()#FUENTE_B()#NEGRITA()#DO()FACTURA${COLUMNA_2}SUCURSAL${COLUMNA_7}SALDO
+#foreach( $entregadoExterno in $entregadosExternos )
+#SIN_NEGRITA()#DO()${entregadoExterno.facturaTxt}${COLUMNA_2}${entregadoExterno.sucursal.nombre}${COLUMNA_7}${entregadoExterno.idFactura}
+#end
+#end
+
+${LF}${LF}
+#ALINEAR_CENTRO()#SIN_NEGRITA()#DO()#LINEA_FIRMA()${LF}
+#NEGRITA()#DO()#altnull(${gerente})${CR}
+AUTORIZA GERENTE
+
+#ALINEAR_IZQUIERDA()#NEGRITA()#DO()OBSERVACIONES:
+#SIN_NEGRITA()#DO()${observaciones}
+${LF}${LF}${LF}${LF}${LF}
+#CORTE()

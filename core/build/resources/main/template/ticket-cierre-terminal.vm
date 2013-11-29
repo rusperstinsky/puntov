@@ -1,0 +1,32 @@
+#parse("template/constantes-impresora.vm")
+#parse("template/macros.vm")
+#macro(TITULO_TICKET)#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()#end
+#define($COLUMNAS)${GS}P${writer.write(32)}${writer.write(32)}#end
+#define($COL_1)${ESC}${writer.write(36)}${writer.write(10)}${writer.write(0)}#end
+#define($COL_2)${ESC}${writer.write(36)}${writer.write(22)}${writer.write(0)}#end
+#define($COL_3)${ESC}${writer.write(36)}${writer.write(32)}${writer.write(0)}#end
+#define($COL_4)${ESC}${writer.write(36)}${writer.write(42)}${writer.write(0)}#end
+#define($COL_5)${ESC}${writer.write(36)}${writer.write(57)}${writer.write(0)}#end
+#define($COL_6)${ESC}${writer.write(36)}${writer.write(62)}${writer.write(0)}#end
+#define($COL_7)${ESC}${writer.write(36)}${writer.write(70)}${writer.write(0)}#end
+## Inicia ticket
+${COLUMNAS}#ALINEAR_CENTRO()#SEPARACION()${LF}
+#TITULO_TICKET()CIERRE DE TERMINAL
+#RESET_TEXTO()#DO()#SEPARACION()${LF}
+#ALINEAR_IZQUIERDA()
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0) Sucursal: ${thisSite} ${COL_7}${fechaCierre}#FIN_ESTILO()${CR}
+#SEPARACION()${LF}
+#INICIO_ESTILO(${FUENTE_A} ${NEGRITA} 0 0 0)  Terminal: ${terminal}#FIN_ESTILO()${CR}
+#AVANZAR_LINEAS(1)
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0)${COL_1}   ${titulo}${COL_3}Fact${COL_4}Vouchers${COL_6}   Importe#FIN_ESTILO()${CR}
+#foreach( $ln in $detalle )
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${COL_1}   ${ln.plan}${COL_3}${ln.tknum}${COL_4}${ln.rctnum}${COL_6}${ln.monto}#FIN_ESTILO()${CR}
+#end
+#AVANZAR_LINEAS(1)
+#INICIO_ESTILO(${FUENTE_A} ${NEGRITA} 0 0 0)Total: ${totalDolares}                 ${total}#FIN_ESTILO()${CR}
+#AVANZAR_LINEAS(3)
+#ALINEAR_CENTRO()#SIN_NEGRITA()#DO()#LINEA_FIRMA()${CR}
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0)${empleado}#FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)AUTORIZA GERENTE#FIN_ESTILO()${CR}
+#AVANZAR_LINEAS(5)
+#CORTE()

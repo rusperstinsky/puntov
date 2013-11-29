@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ventas_Por_Vendedor_Por_Marca_Detalle" language="groovy" pageWidth="648" pageHeight="792" columnWidth="648" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7cd5d4aa-b72d-4251-9f5a-697faea649e4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/opticalux/proyectos/jpv/reports/src/main/resources/reports/"]]></defaultValueExpression>
+	</parameter>
+	<field name="idEmpleado" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="pagos" class="java.util.List"/>
+	<field name="totalPagos" class="java.math.BigDecimal"/>
+	<field name="contador" class="java.math.BigDecimal"/>
+	<field name="totalPagosIva" class="java.math.BigDecimal"/>
+	<field name="mostrarArticulos" class="java.lang.Boolean"/>
+	<variable name="totalPagos_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{totalPagos}]]></variableExpression>
+	</variable>
+	<variable name="contador_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{contador}]]></variableExpression>
+	</variable>
+	<variable name="contador_2" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{contador}]]></variableExpression>
+	</variable>
+	<variable name="totalPagosIva_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{totalPagosIva}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="b68464a4-a573-4fa2-a6d1-9851f9c55ef4" x="221" y="0" width="34" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dcba57e2-d54b-4744-ae84-73a62b7cbe84" x="289" y="0" width="38" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6c366655-17a8-49fd-b2f0-176b6a5d9d0a" x="341" y="0" width="38" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6c366655-17a8-49fd-b2f0-176b6a5d9d0a" x="569" y="0" width="50" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sin Iva]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6c366655-17a8-49fd-b2f0-176b6a5d9d0a" x="619" y="0" width="50" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b68464a4-a573-4fa2-a6d1-9851f9c55ef4" x="0" y="0" width="221" height="14"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vendedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e3c01da5-938c-46cc-ba96-55a51c153c6d" x="386" y="0" width="183" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{mostrarArticulos} == false]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Articulo]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="d57c6520-2cd2-4276-b07b-935049ec96cb" x="0" y="0" width="43" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idEmpleado}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="989700f6-4c8d-4a66-8420-2920dac65820" x="43" y="0" width="178" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="585ae762-4ed7-493a-a703-70efe424efa6" x="221" y="0" width="252" height="14"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{pagos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/Ventas_Por_Vendedor_Por_Marca_Pagos.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

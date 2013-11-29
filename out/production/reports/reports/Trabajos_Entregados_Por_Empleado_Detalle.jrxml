@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="Trabajos_Entregados_Por_Empleado_Detalle" language="groovy" pageWidth="612" pageHeight="792"
+              columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0"
+              uuid="ba77e196-7081-4217-9c4e-a09b57f65141">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression>
+            <![CDATA["/home/opticalux/proyectos/jpv/reports/src/main/resources/reports/"]]></defaultValueExpression>
+    </parameter>
+    <field name="idEmpleado" class="java.lang.String"/>
+    <field name="nomEmpleado" class="java.lang.String"/>
+    <field name="lstPropiedades" class="java.util.List"/>
+    <field name="totalTrabajos" class="java.lang.Integer"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <detail>
+        <band height="56" splitType="Stretch">
+            <textField>
+                <reportElement uuid="b4a43ad9-f84b-4ff1-96c0-72286a68452b" x="0" y="0" width="40" height="14"/>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="9" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{idEmpleado}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement uuid="f9dad0b5-6aa2-4e79-8143-b103b616366d" x="40" y="0" width="142" height="14"/>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="9" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nomEmpleado}]]></textFieldExpression>
+            </textField>
+            <subreport>
+                <reportElement uuid="7d9a3b23-b8f5-4624-8139-5d815f3004b7" x="0" y="19" width="612" height="23"/>
+                <dataSourceExpression>
+                    <![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{lstPropiedades})]]></dataSourceExpression>
+                <subreportExpression>
+                    <![CDATA["reports/Trabajos_Entregados_Por_Empleado_Lista.jasper"]]></subreportExpression>
+            </subreport>
+        </band>
+    </detail>
+    <summary>
+        <band height="14">
+            <line>
+                <reportElement uuid="0ada6c25-9515-433a-a442-326109d2015f" x="0" y="0" width="183" height="1"/>
+                <graphicElement>
+                    <pen lineStyle="Dashed"/>
+                </graphicElement>
+            </line>
+            <textField>
+                <reportElement uuid="dd407522-2334-4388-8f52-0df3d072fdcb" x="40" y="0" width="100" height="14"/>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="9" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{totalTrabajos}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement uuid="e9e71dfb-b06a-4f49-8e46-6543e389f4e9" x="0" y="1" width="40" height="13"/>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Total:]]></text>
+            </staticText>
+        </band>
+    </summary>
+</jasperReport>

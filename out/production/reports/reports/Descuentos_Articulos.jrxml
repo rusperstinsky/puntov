@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Descuentos_Articulos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2a70537f-6f9f-4414-8a31-97331dc70c95">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="articulo.articulo" class="java.lang.String"/>
+	<field name="articulo.codigoColor" class="java.lang.String"/>
+	<variable name="color" class="java.lang.String">
+		<variableExpression><![CDATA["["+$F{articulo.codigoColor}+"]"]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<textField>
+				<reportElement uuid="6e29d083-24f0-407d-83d4-3320d64925a4" x="0" y="0" width="74" height="12"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{articulo.articulo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d828aa8d-084e-47fc-b2f9-333838f27024" x="74" y="0" width="67" height="12">
+					<printWhenExpression><![CDATA[!$F{articulo.codigoColor}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{color}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

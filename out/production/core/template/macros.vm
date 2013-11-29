@@ -1,0 +1,1 @@
+#macro(altnull $variable)#if("$!variable"!="")${variable.toString().trim()}#end#end

@@ -1,0 +1,6 @@
+#define($CR)${writer.write(13)}#end
+#macro(GET $dato)#if($dato)${dato}#end#end
+$sucursal.id|$fecha_cierre|$numero_registros|${CR}
+#foreach( $nv in $notas_venta )
+${foreach.count}|#GET(${nv.factura})|#GET(${nv.id_factura})|#GET(${nv.id_empleado})|#GET(${nv.descuentoSunI})|#GET(${nv.id_cliente})|#GET(${nv.s_factura})|#GET(${nv.total})|#GET(${tipoVenta})|#GET(${referido})|#GET(${nv.porcentajeDescSunI})|#GET(${nv.tipo_descuentoSunI})|#GET(${nv.claveSunI})|#GET(${tipoCliente})|#GET(${nv.fecha_entrega})|#GET(${nv.hora_entrega})|#GET(${nv.pais})|${CR}
+#end

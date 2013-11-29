@@ -1,0 +1,5 @@
+#define($CR)${writer.write(13)}#end
+${sucursal.id}|${fecha_cierre}|${numero_registros}|${CR}
+#foreach( $mod in $modificaciones )
+${foreach.count}|$mod.id_factura|$mod.id_mod|$mod.tipo|$mod.monto|$mod.total|$mod.observaciones|$mod.descuento|$mod.tipo_descuento|$mod.clave|$mod.convenio|$mod.factura|${CR}
+#end

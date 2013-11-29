@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Pagos_Detalle" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="742ff869-e587-427c-a474-d23daf23b2e4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/opticalux/proyectos/jpv/reports/src/main/resources/reports/"]]></defaultValueExpression>
+	</parameter>
+	<field name="descTipoPago" class="java.lang.String"/>
+	<field name="descuentos" class="java.util.List"/>
+	<field name="importeDolares" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="61" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="a27a0a59-9478-4670-8fa0-f0761f8bfeb6" x="100" y="0" width="208" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descTipoPago}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="a9de59c3-c7d5-4317-96ca-7447fb40624c" x="100" y="14" width="512" height="41"/>
+				<subreportParameter name="importeDolares">
+					<subreportParameterExpression><![CDATA[$F{importeDolares}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{descuentos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/Pagos_Lista.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="009ddae0-bc44-430b-a207-4b2f7408ded7" x="0" y="0" width="100" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Pago:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

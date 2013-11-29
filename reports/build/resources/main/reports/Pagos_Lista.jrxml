@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Pagos_Lista" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="5e9e615e-ebf1-41e1-a044-abc8234bb08d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="importeDolares" class="java.math.BigDecimal"/>
+	<field name="fecha" class="java.util.Date"/>
+	<field name="factura" class="java.lang.String"/>
+	<field name="importe" class="java.math.BigDecimal"/>
+	<field name="refClave" class="java.lang.String"/>
+	<field name="claveP" class="java.lang.String"/>
+	<field name="idBancoEmi" class="java.lang.String"/>
+	<field name="idTerm" class="java.lang.String"/>
+	<field name="idPlan" class="java.lang.String"/>
+	<field name="f1" class="java.lang.String"/>
+	<field name="f2" class="java.lang.String"/>
+	<field name="f3" class="java.lang.String"/>
+	<field name="f4" class="java.lang.String"/>
+	<field name="f5" class="java.lang.String"/>
+	<variable name="factura_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{factura}]]></variableExpression>
+	</variable>
+	<variable name="importe_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{importe}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="c905e6a3-ae66-4a33-9ae5-bf0fbfe46bcc" x="0" y="0" width="53" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bd2e2364-fb09-454d-9d5e-d2c3cea102c0" x="59" y="0" width="56" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3bb9adeb-8f75-4aef-a372-e98a8fb63d81" x="115" y="0" width="57" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="3ba021c4-27ff-4d04-8774-c198b3c1a1fa" x="185" y="0" width="62" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[!$F{f1}.equalsIgnoreCase( "EFD" )]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{f1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="40f7687a-9207-4e52-b3b0-05d16b2c9eee" x="247" y="0" width="122" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{f2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ef4bcc4c-8b85-4e94-8858-5cadbe5c304c" x="369" y="0" width="92" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{idBancoEmi} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{f3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a29b6968-30dd-49ed-9e7f-444e3e7bd085" x="468" y="0" width="86" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{f4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ec2ed929-62f8-472d-b125-f1fbb656df66" x="554" y="0" width="51" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{f5}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="026978c3-6c29-4cc9-95a9-8bf0e6c3bc51" x="0" y="0" width="53" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="a6521e39-8aa7-4e87-94ae-ed39f45c4dde" x="59" y="0" width="56" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="e57d2a5c-7ed5-4016-8a1f-019ad88314b2" x="115" y="0" width="57" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{importe}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="d3e66256-7b34-4c62-aeb9-a5ef16a16c9d" x="247" y="0" width="121" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[!$F{f2}.equalsIgnoreCase( "EFD" ) && !$F{f2}.equalsIgnoreCase( "" )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{refClave}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="5733272b-eac2-4138-92c6-8ffa71f2a27c" x="185" y="0" width="62" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[!$F{f1}.equalsIgnoreCase( "EFD" ) && !$F{f1}.equalsIgnoreCase( "" )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{claveP}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="65dbc47a-9a8c-46dc-814e-795ef1fe37b5" x="368" y="0" width="92" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[!$F{f3}.equalsIgnoreCase( "" )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idBancoEmi}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="5d67bc70-81f1-45bd-b344-31e799954e99" x="468" y="0" width="86" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[!$F{f4}.equalsIgnoreCase( "" )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idTerm}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="89f9370a-f667-4f30-8db9-317ba277bfae" x="554" y="0" width="51" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[!$F{f5}.equalsIgnoreCase( "" )]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idPlan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="27">
+			<staticText>
+				<reportElement uuid="629921fc-ee77-48cc-b633-4532a7c8fc62" x="0" y="13" width="53" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="289cbb92-8b36-4019-8fcb-5b3df824f849" x="59" y="13" width="56" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{factura_1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00">
+				<reportElement uuid="fe631b5c-29a6-4a97-8738-bd89c476db6f" x="115" y="13" width="57" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{importe_1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="e89b7527-5bda-4eca-9cd4-b3b32e42c2c9" x="554" y="13" width="51" height="14">
+					<printWhenExpression><![CDATA[$P{importeDolares}.compareTo( BigDecimal.ZERO ) > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{importeDolares}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

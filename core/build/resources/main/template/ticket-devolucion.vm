@@ -1,0 +1,43 @@
+#parse("template/constantes-impresora.vm")
+#parse("template/macros.vm")
+#define($COLUMNAS)${GS}P${writer.write(32)}${writer.write(32)}#end
+#define($COL_DET_1)${ESC}${writer.write(36)}${writer.write(2)}${writer.write(0)}#end
+#define($COL_DET_2)${ESC}${writer.write(36)}${writer.write(30)}${writer.write(0)}#end
+#define($COL_DET_3)${ESC}${writer.write(36)}${writer.write(72)}${writer.write(0)}#end
+## Inicia ticket
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)${compania.shortName}${LF}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)${compania.name}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${compania.address_1}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${compania.address_2}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${compania.address_3}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${compania.taxId}${LF}
+#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)#altnull(${sucursal.nombre}) [#altnull(${sucursal.id})]
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${sucursal.direccion})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${sucursal.colonia})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${sucursal.ciudad})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)Tel: #altnull(${sucursal.telefonos})${CR}
+#ALINEAR_DERECHA()#SET_STYLE(${FUENTE_A} ${NEGRITA} 0 0 0)Folio: ${trNbr}${LF}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)Fecha: ${effDate}${CR}
+#LINEA_SEPARACION_SIMPLE()
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)DEVOLUCION${LF}
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)Atendido por: ${user}#FIN_ESTILO()${CR}
+#ALINEAR_IZQUIERDA()#SEPARACION()${LF}
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)      Ref a Ticket: ${ticket}#FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)  Valor devolucion: ${returnAmount}#FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)          Vendedor: ${empName}#FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)     Observaciones: ${remarks_1}#FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)                    ${remarks_2}#FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)          Cantidad: ${quantity}#FIN_ESTILO()${CR}
+#${COLUMNAS}#LINEA_SEPARACION_SIMPLE()
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0)${COL_DET_1}Articulo${COL_DET_3}Cantidad#FIN_ESTILO()${CR}
+#LINEA_SEPARACION_SIMPLE()
+#foreach( $part in $parts )
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${COL_DET_1}${part.sku}  ${part.desc}${COL_DET_3}    ${part.qty}#FIN_ESTILO()${CR}
+#end
+#LINEA_SEPARACION_SIMPLE()
+#AVANZAR_LINEAS(2)
+#ALINEAR_CENTRO()#SIN_NEGRITA()#DO()#LINEA_FIRMA()${CR}
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0)${mgr}#FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)AUTORIZA GERENTE#FIN_ESTILO()${CR}
+#AVANZAR_LINEAS(5)
+#CORTE()

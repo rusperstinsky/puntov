@@ -1,0 +1,27 @@
+#parse("template/constantes-impresora.vm")
+#parse("template/macros.vm")
+#define($COLUMNAS)${GS}P${writer.write(32)}${writer.write(32)}#end
+#define($COL_PAGO_1)${ESC}${writer.write(36)}${writer.write(40)}${writer.write(0)}#end
+#define($COL_PAGO_2)${ESC}${writer.write(36)}${writer.write(60)}${writer.write(0)}#end
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_A} 0 ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)PLAN CANCELACION
+${COLUMNAS}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#INICIO_NEGRITAS()TIPO: TOTAL___${HT}TRANSFERENCIA___#FIN_NEGRITAS()${LF}
+#ALINEAR_IZQUIERDA()
+#INICIO_NEGRITAS()TICKET: #FIN_NEGRITAS()#altnull(${ticket_id})${COL_PAGO_1}#INICIO_NEGRITAS()SOI: #FIN_NEGRITAS()#altnull(${nota_venta.id})${CR}
+#INICIO_NEGRITAS()POLIZA: #FIN_NEGRITAS()#altnull(${poliza})${COL_PAGO_1}#INICIO_NEGRITAS()POLIZA VIGENTE: #FIN_NEGRITAS()#altnull(${poliza_vigente})${CR}
+#INICIO_NEGRITAS()FACTURA FISCAL: #FIN_NEGRITAS()#altnull(${factura})${CR}
+#INICIO_NEGRITAS()ARTICULOS: #FIN_NEGRITAS()#altnull(${detalles})
+#LINEA_SEPARACION_DOBLE()
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 ${SUBRAYADO})PAGO${COL_PAGO_2}IMPORTE
+#SET_STYLE(${FUENTE_B} 0 0 0 0)
+#foreach( $pmt in ${pagos} )
+  ${pmt.descripcion}${COL_PAGO_2}${pmt.monto}${CR}
+  ${pmt.descripcion1}${CR}
+  ${COL_PAGO_1}TR${COL_PAGO_2}$__________${CR}
+  ${COL_PAGO_1}TR${COL_PAGO_2}$__________${CR}
+  ${COL_PAGO_1}TR${COL_PAGO_2}$__________${CR}
+  ${COL_PAGO_1}DV${COL_PAGO_2}$__________${LF}
+#end
+#LINEA_SEPARACION_DOBLE()
+#AVANZAR_LINEAS(4)
+#CORTE()

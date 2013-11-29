@@ -1,0 +1,6 @@
+#define($CR)${writer.write(13)}#end
+#macro(GET $dato)#if($dato)${dato}#end#end
+${sucursal.id}|${fecha_ahora}|${numero_registros}|
+#foreach( $entregada in $notas )
+#GET(${entregada.id_factura})|${sucursal.id}|#GET(${entregada.fecha_entrega})|#GET(${entregada.hora_entrega})|
+#end

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ventas_Detalle" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="1508d65b-cc76-4fe1-9076-ff604f2d2252">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="monto" class="java.math.BigDecimal"/>
+	<field name="montoAcumulado" class="java.math.BigDecimal"/>
+	<field name="fecha" class="java.util.Date"/>
+	<variable name="columnas" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$V{COLUMN_COUNT}]]></variableExpression>
+		<initialValueExpression><![CDATA[1]]></initialValueExpression>
+	</variable>
+	<variable name="contador" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[1]]></variableExpression>
+	</variable>
+	<variable name="variable1" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$V{montoAcumulado_2}.divide($V{columnas} , 10, RoundingMode.HALF_EVEN )]]></variableExpression>
+		<initialValueExpression><![CDATA[$P{monto}]]></initialValueExpression>
+	</variable>
+	<variable name="montoAcumulado_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{montoAcumulado}]]></variableExpression>
+	</variable>
+	<variable name="montoAcumulado_2" class="java.math.BigDecimal" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{montoAcumulado}]]></variableExpression>
+		<initialValueExpression><![CDATA[$F{montoAcumulado}]]></initialValueExpression>
+	</variable>
+	<variable name="fecha_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{fecha}]]></variableExpression>
+	</variable>
+	<variable name="totalPromedio" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="65a384c3-5314-432a-8acf-f34ad9951a91" x="148" y="0" width="55" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e23ea011-c93b-4955-802f-9245e0943aaf" x="205" y="0" width="73" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Venta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dca2a3e7-d82b-400f-a44d-e6710800055b" x="278" y="0" width="86" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Venta Neta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1dbecfac-f7ca-40b3-b966-fcf19f063c5b" x="364" y="0" width="96" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Venta Promedio]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="9c389fd0-7fa0-439f-8c8d-e2225ab31d53" x="148" y="0" width="55" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00">
+				<reportElement uuid="f9573c16-b6cd-421b-bdff-427c7a709d20" x="205" y="0" width="73" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{montoAcumulado}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00">
+				<reportElement uuid="06b16688-7fcd-42f1-bb08-ae9a60885708" x="278" y="0" width="86" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{montoAcumulado}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="4c550ab7-926b-4cf8-b36e-7460fa112ebb" x="364" y="0" width="96" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{variable1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="40">
+			<textField pattern="$#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="4115dcee-406c-4b95-bd21-4a7a3297bf11" x="203" y="4" width="73" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{montoAcumulado_2}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="4115dcee-406c-4b95-bd21-4a7a3297bf11" x="276" y="4" width="86" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{montoAcumulado_2}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="4aaccf77-a55a-46db-a213-09625ecb65c7" x="148" y="3" width="300" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="5d504042-c512-4a43-b4a0-b4d52487aa47" x="148" y="5" width="55" height="13"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d87932ca-f490-4d66-96f6-66cdf58eecb3" x="148" y="26" width="129" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de Transacciones:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="63fcf5c7-2bdd-47ff-8601-1dc9782312ac" x="277" y="26" width="75" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{fecha_1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="4c550ab7-926b-4cf8-b36e-7460fa112ebb" isPrintRepeatedValues="false" x="362" y="5" width="96" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{variable1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

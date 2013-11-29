@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Venta_Linea_Articulos_Canc" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="873d6c63-2bc3-4112-a529-e5071cfaf5b7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="idArticulo" class="java.lang.String"/>
+	<field name="articulo.articulo" class="java.lang.String"/>
+	<field name="precioUnitFinal" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField>
+				<reportElement uuid="6ba0c7f5-b2d1-4081-956d-f438e8f0a76b" x="0" y="0" width="50" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{precioUnitFinal}.compareTo( BigDecimal.ZERO ) > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idArticulo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f19b648c-731e-403d-9fd9-d09aad879f84" x="50" y="0" width="131" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{precioUnitFinal}.compareTo( BigDecimal.ZERO ) > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{articulo.articulo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="-$#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="d06eb84e-5c97-470f-8f21-eade05bc7186" x="181" y="0" width="100" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{precioUnitFinal}.compareTo( BigDecimal.ZERO ) > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{precioUnitFinal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

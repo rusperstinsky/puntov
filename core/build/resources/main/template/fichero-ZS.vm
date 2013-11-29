@@ -1,0 +1,6 @@
+#define($CR)${writer.write(13)}#end
+#macro(GET $dato)#if($dato)${dato}#end#end
+${sucursal.id}|${fecha_cierre}|${numero_registros}|${CR}
+#foreach( $deposito in $depositos )
+${foreach.count}|#GET(${deposito.numeroDeposito})|#GET(${sdf.format($deposito.fechaIngreso)})|#GET(${sdf.format($deposito.fechaDeposito)})|#GET(${deposito.idBanco})|#GET(${deposito.tipoDeposito.trim()})|#GET(${deposito.monto})|#GET(${deposito.referencia.trim()})|${CR}
+#end

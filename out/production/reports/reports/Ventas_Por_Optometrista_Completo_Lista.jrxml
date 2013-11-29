@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ventas_Por_Optometrista_Completo_Lista" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="402b69cf-3aee-4d42-ae83-b13d00d22fde">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="fechaPago" class="java.lang.String"/>
+	<field name="idFactura" class="java.lang.String"/>
+	<field name="montoPago" class="java.math.BigDecimal"/>
+	<field name="paciente" class="java.lang.String"/>
+	<variable name="idFactura_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{idFactura}]]></variableExpression>
+	</variable>
+	<variable name="montoPago_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{montoPago}]]></variableExpression>
+	</variable>
+	<variable name="idFactura_2" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{idFactura}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a044f29a-484f-4534-8e44-7c139337ecb9" x="144" y="0" width="70" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Monto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7a23dc7d-40bb-41d8-93ff-2ce47d966ae0" x="214" y="0" width="193" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Paciente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="411a1382-c73a-4e4e-848b-d1441986df99" x="67" y="0" width="77" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2813ef97-c030-4bd2-bc68-0f2ae03188c4" x="0" y="0" width="60" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField pattern="$#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="af5b8a01-a48d-4487-a7a4-df517f1764c6" x="144" y="0" width="70" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{fechaPago} != null && $F{paciente} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{montoPago}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="b76cd077-3997-4658-9f8b-0fddc773b0c2" x="214" y="0" width="193" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paciente}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="b9e8321a-edeb-4633-903c-1665e60ffc32" x="67" y="0" width="77" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{fechaPago} != null && $F{paciente} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idFactura}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="dfe57e20-b424-4541-9c33-9e3c8916bfbb" x="0" y="0" width="60" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaPago}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="17">
+			<staticText>
+				<reportElement uuid="1f3d9388-3c2c-4884-a5c6-94a35cc8fc85" x="0" y="3" width="60" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Subtotal:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="75336099-03c3-4396-8952-7bf9d646acc7" x="60" y="3" width="26" height="14"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{idFactura_1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00">
+				<reportElement uuid="c18c7f27-a224-49c5-8f2c-be0e48510269" x="144" y="3" width="70" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{montoPago_1}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="b3e4e863-e4fc-4c38-a859-fcced8da3abe" x="0" y="2" width="407" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="cccd28ed-e059-444e-a8d8-df991f1c42e5" x="86" y="3" width="58" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Examenes]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

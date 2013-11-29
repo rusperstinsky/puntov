@@ -1,0 +1,65 @@
+#parse("template/constantes-impresora.vm")
+#parse("template/macros.vm")
+#define($COLUMNAS)${GS}P${writer.write(32)}${writer.write(32)}#end
+#define($COL_DET_1)${ESC}${writer.write(36)}${writer.write(10)}${writer.write(0)}#end
+#define($COL_DET_2)${ESC}${writer.write(36)}${writer.write(55)}${writer.write(0)}#end
+#define($COL_DET_3)${ESC}${writer.write(36)}${writer.write(75)}${writer.write(0)}#end
+## Inicia ticket
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)#altnull(${empresa})${LF}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)#altnull(${emisor.rfc})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${emisor.nombre})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${emisor.calle})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${emisor.colonia})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${emisor.municipio}) #altnull(${emisor.estado})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${emisor.codigo_postal})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${emisor.regimen_fiscal})${LF}
+#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)#altnull(${sucursal.nombre}) [#altnull(${sucursal.id})]
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${sucursal.direccion})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${sucursal.colonia})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${sucursal.ciudad})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${sucursal.telefonos})${CR}
+#LINEA_SEPARACION_SIMPLE()
+#SET_STYLE(${FUENTE_B} 0 0 0 0)FOLIO: #INICIO_NEGRITAS()#altnull(${folio})#FIN_NEGRITAS()${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)NUM. CERTIFICADO: #INICIO_NEGRITAS()#altnull(${num_certificado})#FIN_NEGRITAS()${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)NUM APROBACION: #INICIO_NEGRITAS()#altnull(${num_aprobacion})#FIN_NEGRITAS()${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)A#ENIE_UP()O APROBACION: #INICIO_NEGRITAS()#altnull(${anio_aprobacion})#FIN_NEGRITAS()${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)LUGAR EXPEDICION: #INICIO_NEGRITAS()#altnull(${lugar_expedicion})#FIN_NEGRITAS()${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)FECHA: #INICIO_NEGRITAS()#altnull(${fecha})#FIN_NEGRITAS()${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)TICKET: #INICIO_NEGRITAS()#altnull(${comprobante.ticket})#FIN_NEGRITAS()${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)SOI: #INICIO_NEGRITAS()#altnull(${comprobante.idFactura})#FIN_NEGRITAS()${CR}
+#LINEA_SEPARACION_SIMPLE()
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)VENTA${LF}
+#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)CLIENTE: #altnull(${cliente.nombreCompleto(true)})${CR}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)#altnull(${receptor.rfc})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${receptor.nombre})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${receptor.calle})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${receptor.colonia})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${receptor.municipio}) #altnull(${receptor.estado})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${receptor.codigo_postal})${CR}
+#LINEA_SEPARACION_SIMPLE()
+${COLUMNAS}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 ${SUBRAYADO})CANT${COL_DET_1}DESCRIPCION${COL_DET_2}PRECIO${COL_DET_3}IMPORTE
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#foreach( $det in $conceptos )${det.cantidad}${COL_DET_1}${det.descripcion1}${COL_DET_2}${det.valor_unitario}${COL_DET_3}${det.importe}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${COL_DET_1}${det.descripcion2}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${COL_DET_1}${det.descripcion3}${LF}#end
+#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)Articulos: ${totalArt}
+#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)${COL_DET_2}SUBTOTAL:${COL_DET_3}#altnull(${subtotal})${CR}
+#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)#foreach( $imp in $impuestos )${COL_DET_2}${imp.impuesto} ${imp.tasa}%${COL_DET_3}${imp.importe}${CR}#end${CR}
+#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)${COL_DET_2}TOTAL:${COL_DET_3}#altnull(${total})${LF}
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${texto_total})${LF}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_B} 0 0 0 0)FORMA DE PAGO: #altnull(${forma_pago})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)METODO DE PAGO: #altnull(${metodo_pago})${CR}
+#LINEA_SEPARACION_SIMPLE()${CR}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_B} 0 0 0 0)SELLO DIGITAL:${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${sello}${LF}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)CADENA ORIGINAL:${CR}
+#PRINT_SPECIAL_CHARECTERS(0)#SET_STYLE(${FUENTE_B} 0 0 0 0)${cadena_original}${LF}
+#if("$!sello_cfdi"!="")
+#SET_STYLE(${FUENTE_B} 0 0 0 0)SELLO DIGITAL CFDI:${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${sello_cfdi})${LF}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)CADENA ORIGINAL CFDI:${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${cadena_original_cfdi})${LF}
+#end
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)#altnull(${leyenda})${CR}
+#AVANZAR_LINEAS(4)
+#CORTE()

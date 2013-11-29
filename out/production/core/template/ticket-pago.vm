@@ -1,0 +1,47 @@
+#parse("template/constantes-impresora.vm")
+#parse("template/macros.vm")
+#macro(TITULO_RECIBO $id)#INICIO_ESTILO(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)RECIBO${HT}${HT}#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)#INICIO_ESTILO(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)    ${id}#FIN_ESTILO()${LF}#end
+#define($COLUMNAS)${GS}P${writer.write(32)}${writer.write(32)}#end
+#define($COL_DET_1)${ESC}${writer.write(36)}${writer.write(8)}${writer.write(0)}#end
+#define($COL_DET_2)${ESC}${writer.write(36)}${writer.write(22)}${writer.write(0)}#end
+#define($COL_DET_3)${ESC}${writer.write(36)}${writer.write(36)}${writer.write(0)}#end
+#define($COL_DET_4)${ESC}${writer.write(36)}${writer.write(50)}${writer.write(0)}#end
+#define($COL_DET_5)${ESC}${writer.write(36)}${writer.write(64)}${writer.write(0)}#end
+#define($COL_DET_6)${ESC}${writer.write(36)}${writer.write(78)}${writer.write(0)}#end
+#define($COL_7)${ESC}${writer.write(36)}${writer.write(70)}${writer.write(0)}#end
+#define($COL_DIST_1)${ESC}${writer.write(36)}${writer.write(25)}${writer.write(0)}#end
+#define($COL_DIST_2)${ESC}${writer.write(36)}${writer.write(39)}${writer.write(0)}#end
+#define($COL_DIST_3)${ESC}${writer.write(36)}${writer.write(70)}${writer.write(0)}#end
+## Inicia ticket
+${COLUMNAS}
+#SEPARACION()
+#TITULO_RECIBO(${pagoN.recibo})
+#SEPARACION()
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)${compania.name}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${compania.address_1}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${compania.address_2}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${compania.address_3}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${compania.taxId}${LF}
+#ETIQUETA_VALOR("#altnull(${sucursal.nombre})")
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${sucursal.direccion}#FIN_ESTILO()${CR}
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${sucursal.colonia}#FIN_ESTILO()${CR}
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)TELEFONO: ${sucursal.telefono}#FIN_ESTILO()${CR}
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${sucursal.ciudad}#FIN_ESTILO()${CR}
+#SEPARACION()
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)Lugar y fecha de expedicion:#FIN_ESTILO()${CR}
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${expedicion.fecha}#FIN_ESTILO()${CR}
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)Le atendio: ${expedicion.atendio}#FIN_ESTILO()${CR}
+#SEPARACION()
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)NOMBRE: ${cliente.nombre}#FIN_ESTILO()${CR}
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)DOMICILIO: ${cliente.domicilio}#FIN_ESTILO()${CR}
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)Tel.: Casa: ${cliente.telefono}#FIN_ESTILO()${CR}
+#SEPARACION()
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_A} ${NEGRITA} 0 0 0)Recibi del cliente#FIN_ESTILO()${CR}
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${pagoN.tipoPago}${COL_7}${pagoN.monto}#FIN_ESTILO()${CR}
+${CR}
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)IMPORTE FACT. ${pagoN.factura}${COL_7}${montoTotal}#FIN_ESTILO()${CR}
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)PAGOS ANTERIORES${COL_7}${pagoN.anterior}#FIN_ESTILO()${CR}
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)SU PAGO ${pagoN.noParcialidad} PARCIALIDAD${COL_7}${pagoN.parcialidad}#FIN_ESTILO()${CR}
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)NUEVO SALDO${COL_7}${pagoN.nuevoSaldo}#FIN_ESTILO()${CR}
+#AVANZAR_LINEAS(5)
+#CORTE()

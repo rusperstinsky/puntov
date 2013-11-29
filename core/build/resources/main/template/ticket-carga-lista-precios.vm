@@ -1,0 +1,13 @@
+#parse("template/constantes-impresora.vm")
+#parse("template/macros.vm")
+## Inicia ticket
+#SEPARACION()${CR}
+#ALINEAR_CENTRO()#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)LISTA DE PRECIOS#FIN_ESTILO()${CR}
+#SEPARACION()${LF}
+#ETIQUETA_VALOR("SUCURSAL:" "#altnull(${sucursal.nombre}) [#altnull(${sucursal.id})]")
+#ETIQUETA_VALOR("ID LISTA:" "#altnull(${id_lista})")
+#ETIQUETA_VALOR("TIPO CARGA:" "#altnull(${tipo_carga})")
+#ETIQUETA_VALOR("Fecha:" "#altnull(${fecha})")
+#SEPARACION()${CR}
+#AVANZAR_LINEAS(5)
+#CORTE()

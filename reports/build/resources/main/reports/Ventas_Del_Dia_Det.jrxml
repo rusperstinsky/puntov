@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ventas_Del_Dia_Det" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="9f715e92-34d5-4a79-a553-45b6221a36c2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/benjamin/soi/jpv/reports/src/main/resources/reports/"]]></defaultValueExpression>
+	</parameter>
+	<field name="factura" class="java.lang.String"/>
+	<field name="montoConDescuento" class="java.math.BigDecimal"/>
+	<field name="montoTotal" class="java.math.BigDecimal"/>
+	<field name="montoDescuento" class="java.math.BigDecimal"/>
+	<field name="contadorArt" class="java.lang.String"/>
+	<field name="generico" class="java.lang.String"/>
+	<field name="genMontoConDescuento" class="java.math.BigDecimal"/>
+	<field name="genContadorArt" class="java.lang.String"/>
+	<field name="genMontoDescuento" class="java.math.BigDecimal"/>
+	<field name="genMontoTotal" class="java.math.BigDecimal"/>
+	<field name="empleado" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="16">
+			<staticText>
+				<reportElement uuid="b178ec80-73ff-449d-881e-2999ab725831" x="0" y="2" width="100" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e5b6b8df-8cfc-4bf2-b28d-5379b4c7c735" x="256" y="2" width="56" height="14"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Piezas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0d4967b2-d082-4068-b107-f7ca22069c33" x="312" y="2" width="100" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="51beecc0-3d2a-4289-9653-b80ea8f19b89" x="412" y="2" width="100" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descuento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="973123c3-1676-439d-b3f3-73bad27f247a" x="512" y="2" width="100" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4e86c031-8460-42aa-b1a5-9f267d1a5a83" x="100" y="2" width="156" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Empleado]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField>
+				<reportElement uuid="a88b3546-38c2-4ff1-b1b8-e55524408550" x="0" y="0" width="100" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{montoConDescuento}.compareTo( BigDecimal.ZERO ) > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="90f4f8ef-9b7a-463c-9bb9-1d5f8265bf7d" x="512" y="0" width="100" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{montoConDescuento}.compareTo( BigDecimal.ZERO ) > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{montoConDescuento}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="31214f7d-9730-4b20-b68a-8047a06ec69d" x="312" y="0" width="100" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{montoConDescuento}.compareTo( BigDecimal.ZERO ) > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{montoTotal}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="47cdcf59-4be2-4dfd-8c87-c2d94a33a559" x="412" y="0" width="100" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{montoConDescuento}.compareTo( BigDecimal.ZERO ) > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{montoDescuento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c4e37d84-0945-4ab9-8b1b-e95be67b1986" x="256" y="0" width="56" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{montoConDescuento}.compareTo( BigDecimal.ZERO ) > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="9" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contadorArt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3073b78a-f813-431f-b662-300da312114d" x="100" y="0" width="156" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{montoConDescuento}.compareTo( BigDecimal.ZERO ) > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{empleado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

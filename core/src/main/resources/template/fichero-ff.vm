@@ -1,0 +1,6 @@
+#define($CR)${writer.write(13)}#end
+#macro(GET $dato)#if($dato)${dato}#end#end
+${sucursal.id}|${CR}
+#foreach( $factura in $facturas )
+${foreach.count}|#GET(${factura.id})|#GET(${factura.rfc})|#GET(${factura.factura})|#GET(${factura.estatus})|#GET(${factura.tipoFac})|#GET(${factura.razon})|#GET(${factura.calle})|#GET(${factura.noExterior})|#GET(${factura.noInterior})|#GET(${factura.colonia})|#GET(${factura.localidad})|#GET(${factura.referencia})|#GET(${factura.municipio})|#GET(${factura.estado})|#GET(${factura.pais})|#GET(${factura.codigoPostal})|#GET(${factura.importe})|${CR}
+#end

@@ -1,0 +1,6 @@
+#define($CR)${writer.write(13)}#end
+#macro(GET $dato)#if($dato)${dato}#end#end
+${sucursal.id}|${fecha_cierre}|${numero_registros}|${CR}
+#foreach( $cliente in $clientes )
+${foreach.count}|#GET(${cliente.id})|#GET(${cliente.titulo})|#GET(${cliente.apellidoPaterno})|#GET(${cliente.apellidoMaterno})|#GET(${cliente.nombre})|#GET(${cliente.sexo})|#GET(${cliente.fechaNacimiento})|#GET(${cliente.udf1})|#GET(${cliente.direccion})|#GET(${cliente.colonia})|#GET(${cliente.codigo})|#GET(${cliente.municipio.nombre})|#GET(${cliente.municipio.estado.nombre})|#GET(${cliente.telefonoCasa})|#GET(${cliente.telefonoTrabajo})|#GET(${cliente.extTrabajo})|#GET(${cliente.telefonoAdicional})|#GET(${cliente.extAdicional})|#GET(${cliente.email})|#GET(${cliente.rfc})|#GET(${cliente.clientePais.pais})|#GET(${cliente.fechaAlta} ${cliente.horaAlta})|${CR}
+#end

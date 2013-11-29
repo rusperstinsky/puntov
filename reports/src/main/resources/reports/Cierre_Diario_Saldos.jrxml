@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="Cierre_Diario_Detalle" language="groovy" pageWidth="595" pageHeight="842" columnWidth="595"
+              leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="fb62da86-6cef-4546-8790-8b8f3a16e12b">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+    <style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+    <style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+    <style name="Detail" fontName="Arial" fontSize="12"/>
+    <field name="notaVenta.factura" class="java.lang.String"/>
+    <field name="fecha" class="java.lang.String"/>
+    <field name="notaVenta.idConvenio" class="java.lang.String"/>
+    <field name="notaVenta.ventaTotal" class="java.math.BigDecimal"/>
+    <field name="idPlan" class="java.lang.String"/>
+    <field name="notaVenta.sucDest" class="java.lang.String"/>
+    <field name="monto" class="java.math.BigDecimal"/>
+    <field name="terminal.descripcion" class="java.lang.String"/>
+    <field name="idFPago" class="java.lang.String"/>
+    <field name="tipoPago" class="java.lang.String"/>
+    <variable name="notaVenta.ventaTotal_1" class="java.math.BigDecimal" calculation="Sum">
+        <variableExpression><![CDATA[$F{notaVenta.ventaTotal}]]></variableExpression>
+    </variable>
+    <variable name="monto_1" class="java.math.BigDecimal" calculation="Sum">
+        <variableExpression><![CDATA[$F{monto}]]></variableExpression>
+    </variable>
+    <group name="Group1">
+        <groupExpression><![CDATA[(int)($V{REPORT_COUNT}/15)]]></groupExpression>
+    </group>
+    <group name="Group2">
+        <groupExpression><![CDATA[(int)($V{REPORT_COUNT}/5)]]></groupExpression>
+    </group>
+    <detail>
+        <band height="12" splitType="Stretch">
+            <textField isBlankWhenNull="true">
+                <reportElement uuid="eb70e1af-9a1e-4f8b-8431-8ec22c749e44" x="35" y="0" width="42" height="12"
+                               isRemoveLineWhenBlank="true">
+                    <printWhenExpression><![CDATA[( $F{tipoPago} == "l" )]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="DejaVu Sans" size="7"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement uuid="352a9671-e52e-4fe4-b58b-2922baf080a6" x="424" y="0" width="32" height="12"
+                               isRemoveLineWhenBlank="true">
+                    <printWhenExpression><![CDATA[( $F{tipoPago} == "l" )]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="DejaVu Sans" size="7"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{idPlan}]]></textFieldExpression>
+            </textField>
+            <textField pattern="$#,##0.00" isBlankWhenNull="true">
+                <reportElement uuid="2e56cca1-9323-4a32-914e-9552eb366ae4" x="213" y="0" width="52" height="12"
+                               isRemoveLineWhenBlank="true">
+                    <printWhenExpression>
+                        <![CDATA[( $F{idFPago} == "EF" &&  $F{tipoPago} == "l"  )]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="7"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{monto}]]></textFieldExpression>
+            </textField>
+            <textField pattern="$#,##0.00" isBlankWhenNull="true">
+                <reportElement uuid="3cdf880b-53a6-4e9b-b072-5181da1be08f" x="265" y="0" width="40" height="12"
+                               isRemoveLineWhenBlank="true">
+                    <printWhenExpression>
+                        <![CDATA[( $F{idFPago} == "CH" && $F{tipoPago} == "l"  )]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="7"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{monto}]]></textFieldExpression>
+            </textField>
+            <textField pattern="$#,##0.00" isBlankWhenNull="true">
+                <reportElement uuid="5469b33d-0464-4aed-9c70-4e4326d43aae" x="305" y="0" width="43" height="12"
+                               isRemoveLineWhenBlank="true">
+                    <printWhenExpression>
+                        <![CDATA[( $F{idFPago} == "TC" && $F{tipoPago} == "l" ) || ( $F{idFPago} == "TD" && $F{tipoPago} == "l" )]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="7"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{monto}]]></textFieldExpression>
+            </textField>
+            <textField pattern="$#,##0.00" isBlankWhenNull="true">
+                <reportElement uuid="6245a0c8-3980-41d2-ace9-f41fab0857c9" x="456" y="0" width="32" height="12"
+                               isRemoveLineWhenBlank="true">
+                    <printWhenExpression>
+                        <![CDATA[( $F{idFPago} == "VA" && $F{tipoPago} == "l" )]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="7"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{monto}]]></textFieldExpression>
+            </textField>
+            <textField pattern="$#,##0.00" isBlankWhenNull="true">
+                <reportElement uuid="03612f3f-8e95-42d3-9a82-0ca04961179e" x="488" y="0" width="32" height="12"
+                               isRemoveLineWhenBlank="true">
+                    <printWhenExpression>
+                        <![CDATA[( $F{idFPago} == "TR" && $F{tipoPago} == "l" )]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="7"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{monto}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement uuid="b81ca1b4-22c2-496d-ab09-88ba9dde38d0" x="556" y="0" width="39" height="12"
+                               isRemoveLineWhenBlank="true">
+                    <printWhenExpression><![CDATA[( $F{notaVenta.factura} == null )]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="7"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{idFPago}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement uuid="a313790b-75ed-4ddb-a0c2-8d799295f76a" x="556" y="0" width="36" height="12"
+                               isRemoveLineWhenBlank="true">
+                    <printWhenExpression><![CDATA[( $F{notaVenta.factura} == null )]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="7"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{tipoPago}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement uuid="292d074d-9068-4812-b9b1-03467ea5aaef" x="109" y="0" width="41" height="12"
+                               isRemoveLineWhenBlank="true">
+                    <printWhenExpression><![CDATA[( $F{tipoPago} == "l" )]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="DejaVu Sans" size="7"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{notaVenta.idConvenio}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement uuid="6d3d6ecb-c35c-48c6-b50c-f6d8cec23dd2" x="77" y="0" width="32" height="12"
+                               isRemoveLineWhenBlank="true">
+                    <printWhenExpression><![CDATA[( $F{tipoPago} == "l" )]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="7"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{notaVenta.sucDest}]]></textFieldExpression>
+            </textField>
+            <textField pattern="$#,##0.00" isBlankWhenNull="true">
+                <reportElement uuid="2a071166-1de1-45f1-8bad-9f388de39965" x="520" y="0" width="36" height="12"
+                               isRemoveLineWhenBlank="true">
+                    <printWhenExpression><![CDATA[( $F{tipoPago} == "l" )]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="7"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{notaVenta.ventaTotal}]]></textFieldExpression>
+            </textField>
+            <textField pattern="$#,##0.00" isBlankWhenNull="true">
+                <reportElement uuid="2a071166-1de1-45f1-8bad-9f388de39965" x="150" y="0" width="63" height="12"
+                               isRemoveLineWhenBlank="true">
+                    <printWhenExpression><![CDATA[( $F{tipoPago} == "l" )]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="7"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{notaVenta.ventaTotal}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement uuid="ff6ec13d-20f7-4b75-af76-e04fac1d8698" x="383" y="0" width="41" height="12"
+                               isRemoveLineWhenBlank="true">
+                    <printWhenExpression><![CDATA[( $F{tipoPago} == "l" )]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="DejaVu Sans" size="7"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{terminal.descripcion}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement uuid="15a8a5a1-7543-4067-98c7-3efca0fafbad" x="0" y="0" width="35" height="12"
+                               isRemoveLineWhenBlank="true">
+                    <printWhenExpression><![CDATA[( $F{tipoPago} == "l" )]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="DejaVu Sans" size="7"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{notaVenta.factura}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>

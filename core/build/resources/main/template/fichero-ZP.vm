@@ -1,0 +1,5 @@
+#define($CR)${writer.write(13)}#end
+$sucursal.id|$fecha_cierre|$numero_registros|${CR}
+#foreach( $pago in $pagos )
+$foreach.count|$pago.id_factura|$pago.tipo_pago|$pago.id_f_pago|$pago.monto|$pago.soi_origen|$pago.id_mod|$pago.factura|$pago.id_recibo|$pago.parcialidad|$pago.clave_p|$pago.referencia_clave|$pago.id_banco_emi|$pago.id_terminal|$pago.id_plan|$pago.id_pago|${CR}
+#end

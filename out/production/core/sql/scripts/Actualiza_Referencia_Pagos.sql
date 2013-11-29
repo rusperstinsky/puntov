@@ -1,0 +1,1 @@
+ALTER TABLE pagos ALTER COLUMN referencia_pago TYPE text;

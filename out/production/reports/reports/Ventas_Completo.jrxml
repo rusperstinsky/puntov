@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ventas_Completo" language="groovy" pageWidth="648" pageHeight="792" columnWidth="648" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="51b28e9f-7ef1-490f-876a-4354205a5fe2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="fechaInicio" class="java.lang.String"/>
+	<parameter name="fechaActual" class="java.lang.String"/>
+	<parameter name="fechaFin" class="java.lang.String"/>
+	<parameter name="sucursal" class="java.lang.String"/>
+	<parameter name="lstVentas" class="java.util.List"/>
+	<parameter name="ivaTasa" class="java.math.BigDecimal"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/opticalux/proyectos/jpv/reports/src/main/resources/reports/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="totalFacturas" class="java.lang.String"/>
+	<parameter name="totalVentas" class="java.math.BigDecimal"/>
+	<parameter name="totalVentasSinIva" class="java.math.BigDecimal"/>
+	<parameter name="promedioVentas" class="java.math.BigDecimal"/>
+	<parameter name="lstVentasCanc" class="java.util.List"/>
+	<parameter name="lstNotasCredito" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="5220a4ba-d547-4498-86ab-6ade7af30d88" style="Title" x="102" y="30" width="77" height="18"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<text><![CDATA[Sucursal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5220a4ba-d547-4498-86ab-6ade7af30d88" style="Title" x="405" y="13" width="15" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<text><![CDATA[AL]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="6c7fbabe-75a6-47ed-8d49-88a243190f07" x="518" y="30" width="37" height="18"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ee38d4d1-f1ae-40d4-9e3c-649ad791122b" x="420" y="13" width="65" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaFin}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="b86a4d91-a506-4518-85ba-43c3ca87629c" x="1" y="1" width="571" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="5220a4ba-d547-4498-86ab-6ade7af30d88" style="Title" x="483" y="30" width="35" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<text><![CDATA[Pag:]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="ffe6a895-d208-477d-895d-2e075cc94b0d" x="1" y="60" width="571" height="1"/>
+			</line>
+			<textField pattern="h.mm a">
+				<reportElement uuid="bb239c15-560d-4dab-a13b-4bee54bb51c7" x="1" y="13" width="68" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaActual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="653d5a51-a221-47bf-8841-621b2a21d24f" x="345" y="13" width="60" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaInicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="5220a4ba-d547-4498-86ab-6ade7af30d88" style="Title" x="102" y="13" width="243" height="17"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE VENTAS DEL]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="65675e50-6ccf-4a9b-b6da-bfc9afe626b0" x="182" y="30" width="247" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sucursal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="250" splitType="Stretch">
+			<subreport>
+				<reportElement uuid="f4de6069-3d9b-4ba8-a68f-7912143d4b15" x="0" y="52" width="572" height="42"/>
+				<subreportParameter name="ivaTasa">
+					<subreportParameterExpression><![CDATA[$P{ivaTasa}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstVentas})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/Ventas_Completo_Detalle.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="a4d3ae55-24a7-4335-bf60-83597bea5db7" x="0" y="12" width="86" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Facturas:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="ccc8ee85-2fff-4dc1-9f02-4825ea869504" x="86" y="12" width="47" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalFacturas}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="1df212a1-8e36-4666-bf23-2def83450ea6" x="564" y="12" width="84" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalVentas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="5ac0a7e9-9df5-4e2c-9249-becdf2dd8b26" x="477" y="12" width="87" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Importe Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a2070045-3104-4dae-96cb-fda4d6c545ee" x="266" y="12" width="121" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Importe sin IVA:]]></text>
+			</staticText>
+			<textField pattern="$#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="0ba58d6a-10ba-441f-9206-145d12b23824" x="387" y="12" width="90" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalVentasSinIva}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="54925c5e-303b-418d-9099-9b93cde4710f" x="133" y="12" width="61" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Promedio:]]></text>
+			</staticText>
+			<textField pattern="$#,##0.00">
+				<reportElement uuid="beb040b4-7f9f-40e3-a0dc-1b96aa1962ac" x="194" y="12" width="72" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{promedioVentas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="15e1a71d-d821-42be-9639-0925d93e20c2" positionType="Float" x="230" y="109" width="100" height="14">
+					<printWhenExpression><![CDATA[!$P{lstVentasCanc}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Canceladas]]></text>
+			</staticText>
+			<subreport>
+				<reportElement uuid="f4de6069-3d9b-4ba8-a68f-7912143d4b15" positionType="Float" x="0" y="123" width="572" height="42"/>
+				<subreportParameter name="ivaTasa">
+					<subreportParameterExpression><![CDATA[$P{ivaTasa}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstVentasCanc})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/Ventas_Completo_Detalle.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="f4de6069-3d9b-4ba8-a68f-7912143d4b15" positionType="Float" x="1" y="190" width="572" height="42"/>
+				<subreportParameter name="ivaTasa">
+					<subreportParameterExpression><![CDATA[$P{ivaTasa}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstNotasCredito})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/Ventas_Completo_Detalle.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="00117191-e65f-4dc5-ba1b-48dfe833ab90" positionType="Float" x="231" y="176" width="100" height="14">
+					<printWhenExpression><![CDATA[!$P{lstNotasCredito}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Notas de Credito]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="15e1a71d-d821-42be-9639-0925d93e20c2" x="230" y="38" width="100" height="14">
+					<printWhenExpression><![CDATA[!$P{lstVentas}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ventas]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

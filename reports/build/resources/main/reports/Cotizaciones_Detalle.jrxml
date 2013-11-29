@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cotizaciones_Detalle" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="94001b3c-149c-4e2e-86e0-7d046e0b41b6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/opticalux/proyectos/jpv/reports/src/main/resources/reports/"]]></defaultValueExpression>
+	</parameter>
+	<field name="fechaMod" class="java.util.Date"/>
+	<field name="idEmpleado" class="java.lang.String"/>
+	<field name="idCotiza" class="java.lang.String"/>
+	<field name="titulo" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="tel" class="java.lang.String"/>
+	<field name="idFactura" class="java.lang.String"/>
+	<field name="observaciones" class="java.lang.String"/>
+	<field name="cotizaDet" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="d4f8d5e4-39a0-4eef-9454-e3da0a52cc40" x="0" y="0" width="55" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bb4ac23e-25ca-4f66-9dff-0a7341149159" x="55" y="0" width="57" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Empleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="37592287-a869-48db-a117-a949fe8589b7" x="112" y="0" width="60" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cotización]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f61b05b5-196e-4b82-9d64-101e230b64ca" x="172" y="0" width="158" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ffd7b8d7-12f3-4165-8db1-86dad4bd421a" x="330" y="0" width="70" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eaab8ffb-840a-4549-b5b1-8548e04507f2" x="400" y="0" width="66" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Articulos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c3d198dc-f2f4-494d-8bd2-2917a8a4b72f" x="466" y="0" width="50" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1a353a5f-af61-4777-a537-49834d4992d9" x="516" y="0" width="96" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Observaciones]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="fc37730a-a643-4567-9658-751d2e986dc5" x="0" y="0" width="55" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaMod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3401e6a2-b96c-40dc-a0ea-fa210ee1af64" x="55" y="0" width="57" height="14"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idEmpleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2e08406e-26d3-4ffb-b2e8-c65a37128fb6" x="112" y="0" width="55" height="14"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idCotiza}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6a8d634e-bc45-4dda-967d-58097389edbc" x="167" y="0" width="32" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{titulo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0077f2b0-850e-4999-9a1f-b2efcbee637a" x="204" y="0" width="126" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="aa5f8b8d-b0b4-4e0d-9aa2-56d8b1fcb170" x="330" y="0" width="70" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tel}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="64b89640-787b-425c-ae92-67a684bb361a" x="466" y="0" width="50" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idFactura}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="38d39e18-e20e-4408-abf9-e4d1f8c4f60b" x="516" y="0" width="96" height="23"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{observaciones}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="f322ba85-ac25-42d2-b935-95c253ad2fea" x="400" y="0" width="66" height="14"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{cotizaDet})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/Cotizaciones_Lista.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

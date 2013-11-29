@@ -1,0 +1,3 @@
+<XX>
+INFORMACION PROCESADA..|100|http://cfdv2.lux.mx/cfdv2/9999-PRUE-100/9999-999999.pdf|http://cfdv2.lux.mx/cfdv2/9999-PRUE-100/9999-999999.xml|
+</XX>

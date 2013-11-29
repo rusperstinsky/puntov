@@ -1,0 +1,6 @@
+#define($CR)${writer.write(13)}#end
+#macro(GET $dato)#if($dato)${dato}#end#end
+${sucursal.id}|${fecha_cierre}|${numero_registros}|${CR}
+#foreach( $promocion in $promociones )
+${foreach.count}|#GET(${promocion.idFactura})|#GET(${promocion.idPromocion})|#GET(${promocion.idArticulo})|#GET(${promocion.descuentoMonto})|#GET(${promocion.descuentoPorcentaje})|${fecha_cierre}|${CR}
+#end

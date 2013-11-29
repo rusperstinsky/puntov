@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cancelaciones_Del_Dia" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="8e16ed51-919e-41e1-b8a4-0c4795bcc1d3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<field name="contadorArtNeg" class="java.lang.Integer"/>
+	<field name="montoTotalCancelado" class="java.math.BigDecimal"/>
+	<field name="factura" class="java.lang.String"/>
+	<field name="montoDescuento" class="java.math.BigDecimal"/>
+	<field name="montoConDescCancelado" class="java.math.BigDecimal"/>
+	<field name="empleado" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField pattern="-">
+				<reportElement uuid="c4e37d84-0945-4ab9-8b1b-e95be67b1986" x="255" y="0" width="56" height="14"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="9" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contadorArtNeg}]]></textFieldExpression>
+			</textField>
+			<textField pattern="-$#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="90f4f8ef-9b7a-463c-9bb9-1d5f8265bf7d" x="511" y="0" width="100" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{montoConDescCancelado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a88b3546-38c2-4ff1-b1b8-e55524408550" x="0" y="0" width="100" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="46a11964-8dd9-4a95-99c7-2887cff893cf" x="311" y="0" width="100" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<text><![CDATA[-      ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2884d281-1071-4206-a8f4-232f5e5fed54" x="411" y="0" width="100" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<text><![CDATA[-      ]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="a799e2be-71e9-4ff5-96ad-26f41304ab30" x="100" y="0" width="155" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{empleado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,59 @@
+#define($ESC)${writer.write(27)}#end
+#define($GS)${writer.write(29)}#end
+#define($LF)${writer.write(10)}#end
+#define($CR)${writer.write(13)}#end
+#define($HT)${writer.write(9)}#end
+#macro(CORTE)${ESC}i#end
+#macro(CODIGO_BARRAS $valor $anchura $interpreta)${GS}h${writer.write(70)}${GS}w${writer.write(${anchura})}${GS}H${writer.write(${interpreta})}${GS}k${writer.write(4)}${valor}${writer.write(0)}${LF}#end
+#define($SALTO_LINEA)${writer.write(10)}#end
+#macro(ALINEAR_IZQUIERDA)${ESC}a${writer.write(0)}#end
+#macro(PRINT_SPECIAL_CHARECTERS $numero)${ESC}R${writer.write(${numero})}#end
+#macro(ALINEAR_CENTRO)${ESC}a${writer.write(1)}#end
+#macro(ALINEAR_DERECHA)${ESC}a${writer.write(2)}#end
+#macro(ALIMENTAR $numero)${ESC}J${writer.write(${numero})}#end
+#macro(AVANZAR_LINEAS $numero)${ESC}d${writer.write(${numero})}#end
+#macro(SEPARACION)__________________________________________#end
+#macro(LINEA_SEPARACION)${ESC}!${writer.write(0)}${LF}__________________________________________${LF}#end
+#macro(LINEA_SEPARACION_SIMPLE)${ESC}!${writer.write(0)}${CR}__________________________________________${LF}#end
+#macro(LINEA_SEPARACION_DOBLE)${ESC}!${writer.write(0)}${LF}==========================================${LF}#end
+#macro(SEPARACION_INTERNA)------------------------------------------------------#end
+#macro(LINEA_FIRMA)______________________________#end
+#set($FUENTE_A = 0)
+#set($FUENTE_B = 1)
+#set($SIN_NEGRITA = 0)
+#set($NEGRITA = 8)
+#set($LETRA_NORMAL = 0)
+#set($DOBLE_ALTURA = 16)
+#set($DOBLE_ANCHURA = 32)
+#set($SUBRAYADO = 128)
+#set($NO_SUBRAYADO = 0)
+#set($ESTILO_FUENTE = ${FUENTE_A})
+#set($ESTILO_NEGRITA = ${SIN_NEGRITA})
+#set($ESTILO_ALTURA = ${LETRA_NORMAL})
+#set($ESTILO_ANCHURA = 0)
+#set($ESTILO_SUBRAYADO = 0)
+#set($ESTILO = 0)
+#macro(DO)${ESC}${writer.write(33)}${writer.write(${ESTILO})}#end
+#macro(ESTILO)#set($ESTILO = ${ESTILO_FUENTE} + ${ESTILO_NEGRITA} + ${ESTILO_ALTURA} + ${ESTILO_ANCHURA} + ${ESTILO_SUBRAYADO})#end
+#macro(NEGRITA)#set($ESTILO_NEGRITA = ${NEGRITA})#ESTILO()#end
+#macro(SIN_NEGRITA)#set($ESTILO_NEGRITA = ${SIN_NEGRITA})#ESTILO()#end
+#macro(FUENTE_A)#set($ESTILO_FUENTE = ${FUENTE_A})#ESTILO()#end
+#macro(FUENTE_B)#set($ESTILO_FUENTE = ${FUENTE_B})#ESTILO()#end
+#macro(DOBLE_ALTURA)#set($ESTILO_ALTURA = ${DOBLE_ALTURA})#ESTILO()#end
+#macro(ALTURA_NORMAL)#set($ESTILO_ALTURA = 0)#ESTILO()#end
+#macro(DOBLE_ANCHURA)#set($ESTILO_ANCHURA = ${DOBLE_ANCHURA})#ESTILO()#end
+#macro(ANCHURA_NORMAL)#set($ESTILO_ANCHURA = 0)#ESTILO()#end
+#macro(SUBRAYADO)#set($ESTILO_SUBRAYADO = ${SUBRAYADO})#ESTILO()#end
+#macro(SIN_SUBRAYADO)#set($ESTILO_SUBRAYADO = 0)#ESTILO()#end
+#macro(RESET_TEXTO)#set($ESTILO_FUENTE = ${FUENTE_A})#set($ESTILO_NEGRITA = ${SIN_NEGRITA})#set($ESTILO_ALTURA = ${LETRA_NORMAL})#set($ESTILO_ANCHURA = ${LETRA_NORMAL})#set($ESTILO_SUBRAYADO = ${NO_SUBRAYADO})#ESTILO()#end
+#macro(INICIO_ESTILO $fuente $enfatizado $altura $anchura $subrayado)#set($MODO=${fuente}+${enfatizado}+${altura}+${anchura}+${subrayado})${ESC}!${writer.write($MODO)}${CR}#end
+#macro(FIN_ESTILO)${ESC}!${writer.write(0)}${CR}#end
+#macro(ETIQUETA_VALOR $etiqueta $valor)#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0)${etiqueta}#INICIO_ESTILO(${FUENTE_B} 0 0 0 0) #altnull(${valor})#FIN_ESTILO()${LF}#end
+#macro(ETIQUETA $etiqueta)#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0)${etiqueta}#FIN_ESTILO()${CR}#end
+#macro(FIRMA $responsable)${LF}${LF}${LF}#ALINEAR_CENTRO()#LINEA_FIRMA()${LF}#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0)${responsable}#FIN_ESTILO()${LF}#end
+#macro(EN_NEGRITAS $valor)${ESC}G${writer.write(1)}${valor}${ESC}G${writer.write(0)}#end
+#macro(INICIO_NEGRITAS)${ESC}G${writer.write(1)}#end
+#macro(FIN_NEGRITAS)${ESC}G${writer.write(0)}#end
+#macro(SET_STYLE $fuente $enfatizado $altura $anchura $subrayado)#set($mode=${fuente}+${enfatizado}+${altura}+${anchura})${ESC}!${writer.write($mode)}#if(${subrayado}>0)${ESC}-${writer.write(1)}#end#end
+#macro(ENIE_UP)${ESC}R${writer.write(7)}${writer.write(92)}#end
+${ESC}@

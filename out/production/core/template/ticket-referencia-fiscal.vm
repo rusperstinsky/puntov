@@ -1,0 +1,31 @@
+#parse("template/constantes-impresora.vm")
+#parse("template/macros.vm")
+## Inicia ticket
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)#altnull(${empresa})${LF}
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_A} ${NEGRITA} 0 0 0)TICKET: #altnull(${comprobante.ticket})${LF}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_A} ${NEGRITA} 0 0 0)Estimado Cliente:${LF}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_A} 0 0 0 0)Su factura le fue enviada por correo${CR}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_A} 0 0 0 0)electronico, si lo requiere, puede${CR}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_A} 0 0 0 0)consultarla en:${LF}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_A} ${NEGRITA} 0 0 0)Representacion Impresa:${LF}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_A} 0 0 0 0)#altnull(${comprobante.url})${LF}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_A} ${NEGRITA} 0 0 0)Archivo de Datos:${LF}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_A} 0 0 0 0)#altnull(${comprobante.xml})${CR}
+#LINEA_SEPARACION_SIMPLE()
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_A} ${NEGRITA} 0 0 0)Datos:${LF}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_A} ${NEGRITA} 0 0 0)RFC: #altnull(${comprobante.rfc})${CR}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_A} ${NEGRITA} 0 0 0)E-Mail: #altnull(${comprobante.email})${CR}
+#LINEA_SEPARACION_SIMPLE()
+${LF}
+${LF}
+${LF}
+#ALINEAR_CENTRO()#LINEA_FIRMA()${CR}
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_B} 0 0 0 0)Enterado${CR}
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${cliente.nombreCompleto(true)})${CR}
+#LINEA_SEPARACION_SIMPLE()${CR}
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_A} 0 0 0 0)Para cualquier duda, comunicarse a:${LF}
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_A} 0 0 0 0)Atencion a Clientes${LF}
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${email_contacto})${CR}
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${telefono_contacto})${CR}
+#AVANZAR_LINEAS(5)
+#CORTE()

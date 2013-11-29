@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="Cancelaciones_Ventas" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612"
+              leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="edc5be70-3353-483d-b3af-a38f103f4bf1">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <field name="idEmpleado" class="java.lang.String"/>
+    <field name="nombre" class="java.lang.String"/>
+    <field name="ventas" class="java.lang.Integer"/>
+    <field name="cancelaciones" class="java.lang.Integer"/>
+    <field name="porcentaje" class="java.lang.String"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <detail>
+        <band height="14" splitType="Stretch">
+            <textField isBlankWhenNull="true">
+                <reportElement uuid="2485322c-3cee-4795-872f-22d627a2da5c" x="0" y="0" width="47" height="14"/>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="9"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{idEmpleado}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement uuid="ae78cecb-6f0e-4c65-96d0-4ae94d3c406c" x="47" y="0" width="210" height="14"/>
+                <textElement>
+                    <font fontName="DejaVu Sans" size="9"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement uuid="9e9dbc79-7771-4696-8a51-e37afb567a0b" x="257" y="0" width="40" height="14"/>
+                <textElement textAlignment="Center">
+                    <font fontName="DejaVu Sans" size="9"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ventas}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement uuid="839cb2df-c921-4813-b0ea-0e2835a1d24a" x="297" y="0" width="73" height="14"/>
+                <textElement textAlignment="Center">
+                    <font fontName="DejaVu Sans" size="9"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{cancelaciones}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement uuid="e5790c5c-621f-43be-845b-9b3bc3e10e48" x="371" y="0" width="40" height="14"/>
+                <textElement textAlignment="Center">
+                    <font fontName="DejaVu Sans" size="9"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{porcentaje}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Venta_Por_Linea_Detalle" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="468e592d-fa3f-444c-a1b4-14b261da2339">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/opticalux/proyectos/jpv/reports/src/main/resources/reports/"]]></defaultValueExpression>
+	</parameter>
+	<field name="fechaHoraFactura" class="java.util.Date"/>
+	<field name="factura" class="java.lang.String"/>
+	<field name="detalles" class="java.util.Collection"/>
+	<field name="empleado.nombreCompleto" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<subreport>
+				<reportElement uuid="77468f9b-98ca-445f-b800-0ab1f8b35f88" x="123" y="0" width="281" height="14"/>
+				<subreportParameter name="factura">
+					<subreportParameterExpression><![CDATA[$F{factura}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="empleado.nombreCompleto">
+					<subreportParameterExpression><![CDATA[$F{empleado.nombreCompleto}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="fechaHoraFactura">
+					<subreportParameterExpression><![CDATA[$F{fechaHoraFactura}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{detalles})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/Venta_Linea_Articulos.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement uuid="96b54a65-8724-41e1-a554-4a04fa87149d" x="67" y="0" width="56" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="aaa1e93b-a545-4108-8e56-cea1a866499e" x="404" y="0" width="183" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{empleado.nombreCompleto}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="a4db0793-78e7-4860-bab1-9f3773eb0b3b" x="0" y="0" width="55" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaHoraFactura}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

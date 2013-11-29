@@ -1,0 +1,1023 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="02088725-c760-4ef2-905a-60871cf1ba9e" name="Default" comment="" />
+    <ignored path="jpv.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/Dummy.txt" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385740511333" ignored="false" />
+    <file path="/TicketServiceImpl.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384287935398" ignored="false" />
+    <file path="/ValidatePriceListDialog.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1380827635330" ignored="false" />
+    <file path="/Item.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385686470860" ignored="false" />
+    <file path="/ListaPreciosServiceImpl.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385688097518" ignored="false" />
+    <file path="/Articulo.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385686779250" ignored="false" />
+    <file path="/ticket-ubicacion-lista-precios-si.vm" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1380828148439" ignored="false" />
+    <file path="/ComprobanteServiceImpl.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385590078801" ignored="false" />
+    <file path="/MainWindow.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385599371697" ignored="false" />
+    <file path="/ReportBusiness.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385674610763" ignored="false" />
+    <file path="/ReportController.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385599516253" ignored="false" />
+    <file path="/InventoryCommit.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384206578067" ignored="false" />
+    <file path="/TipoParametro.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385581587844" ignored="false" />
+    <file path="/Registry.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385495670315" ignored="false" />
+    <file path="/RefundDialog.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382549348660" ignored="false" />
+    <file path="/CancellationController.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384558518304" ignored="false" />
+    <file path="/CancelacionService.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384558196730" ignored="false" />
+    <file path="/CancelacionServiceImpl.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385428409758" ignored="false" />
+    <file path="/LogInPanel.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1381880547100" ignored="false" />
+    <file path="/OrderPanel.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385584672088" ignored="false" />
+    <file path="/ShowOrderPanel.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382627465375" ignored="false" />
+    <file path="/TicketService.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1380919962441" ignored="false" />
+    <file path="/ticket-pino-no-surtido.vm" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1380920675376" ignored="false" />
+    <file path="/CancellationDialog.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382549182635" ignored="false" />
+    <file path="/spring-config.xml" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1380931715574" ignored="false" />
+    <file path="/DailyCloseDepositsDialog.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384969608610" ignored="false" />
+    <file path="/ImportPartMasterDialog.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384974382222" ignored="false" />
+    <file path="/DailyCloseController.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384970058809" ignored="false" />
+    <file path="/fragment.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385136832886" ignored="false" />
+    <file path="/WaitDialog.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385069211702" ignored="false" />
+    <file path="/ArticuloService.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1381341406413" ignored="false" />
+    <file path="/ArticuloServiceImpl.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385150515384" ignored="false" />
+    <file path="/ItemController.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383174515888" ignored="false" />
+    <file path="/database.properties" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385588705445" ignored="false" />
+    <file path="/OrderController.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385673326464" ignored="false" />
+    <file path="/OrderItem.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1381266276860" ignored="false" />
+    <file path="/ArchiveTask.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385493644437" ignored="false" />
+    <file path="/CierreDiarioServiceImpl.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385494062483" ignored="false" />
+    <file path="/persistence.xml" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1381362455405" ignored="false" />
+    <file path="/ItemDialog.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1381504090671" ignored="false" />
+    <file path="/IOServiceImpl.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384973386005" ignored="false" />
+    <file path="/NotaVentaService.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382547947795" ignored="false" />
+    <file path="/NotaVentaServiceImpl.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385569505830" ignored="false" />
+    <file path="/DetalleNotaVenta.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1381499545635" ignored="false" />
+    <file path="/InvTrController.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385084290574" ignored="false" />
+    <file path="/IOService.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384972389749" ignored="false" />
+    <file path="/Remesas.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1381514809964" ignored="false" />
+    <file path="/RemesasRepository.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1381512660697" ignored="false" />
+    <file path="/RepositoryFactory.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1381512878325" ignored="false" />
+    <file path="/InvTrFile.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384206705353" ignored="false" />
+    <file path="/ReportServiceImpl.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385665159065" ignored="false" />
+    <file path="/InvoicePanel.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579692928" ignored="false" />
+    <file path="/InvoiceController.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385508921885" ignored="false" />
+    <file path="/ticket-reuso.vm" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1381948278660" ignored="false" />
+    <file path="/PrepareInvTrBusiness.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382043818364" ignored="false" />
+    <file path="/ehcache.xml" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382394065153" ignored="false" />
+    <file path="/IngresoPorVendedor.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382460485373" ignored="false" />
+    <file path="/IngresoPorFactura.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383256120357" ignored="false" />
+    <file path="/Jb.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382374258295" ignored="false" />
+    <file path="/Order.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383068973347" ignored="false" />
+    <file path="/NotaVenta.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382395668250" ignored="false" />
+    <file path="/VentasPorDia.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384471481582" ignored="false" />
+    <file path="/ResumenCierre.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382553057267" ignored="false" />
+    <file path="/DetalleIngresoPorDia.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382553359478" ignored="false" />
+    <file path="/NotaVentaServiceImplTest.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382547687431" ignored="false" />
+    <file path="/EntregaTrabajoDialog.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382561886709" ignored="false" />
+    <file path="/Descuento.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382567011682" ignored="false" />
+    <file path="/ContactController.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382734100771" ignored="false" />
+    <file path="/Payment.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382986997024" ignored="false" />
+    <file path="/PromotionsAdapter.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382987214618" ignored="false" />
+    <file path="/ZDadapter.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382987301666" ignored="false" />
+    <file path="/ZPadapter.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382987415002" ignored="false" />
+    <file path="/ManualPriceDialog.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1382987452215" ignored="false" />
+    <file path="/PromotionCommit.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383061960437" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/util/TransInvFilterTest.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383078164142" ignored="false" />
+    <file path="/CustomerController.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383093533593" ignored="false" />
+    <file path="/CountryCustomerDialog.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383155848895" ignored="false" />
+    <file path="/ZInFile.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384367248272" ignored="false" />
+    <file path="/PropiedadesporEstado.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383332802095" ignored="false" />
+    <file path="/SaldoPorEstado.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383259736045" ignored="false" />
+    <file path="/TipoDescuento.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383263872753" ignored="false" />
+    <file path="/Pago.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383263269017" ignored="false" />
+    <file path="/DescuentosPorTipo.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385663580638" ignored="false" />
+    <file path="/InvTrSelectorDialog.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383323028219" ignored="false" />
+    <file path="/InvTrFilter.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384897594079" ignored="false" />
+    <file path="/InvTrDataset.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383319965557" ignored="false" />
+    <file path="/InventarioService.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383319381205" ignored="false" />
+    <file path="/InventorySearch.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384994524208" ignored="false" />
+    <file path="/InventarioServiceImpl.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384213122108" ignored="false" />
+    <file path="/Dataset.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384897406067" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/service/impl/MonedaExtranjeraServiceIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383327626665" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/service/impl/IOServiceIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383327626674" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/service/impl/CotizacionServiceIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383327626674" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/repository/GrupoArticuloDetIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383327626707" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/repository/GrupoArticuloIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383327626722" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/repository/OrdenPromDetIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383327626722" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/repository/PromocionIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383327626723" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/repository/TransInvDetalleIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383327626723" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/repository/TransInvIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383327626723" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/repository/MessagesIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383327626740" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/repository/OrdenPromIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383327626740" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QClienteProceso.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383333123671" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QFuncionalidad.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383333123671" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QFormaContacto.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383333123704" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QFacturasImpuestos.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383333123707" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/model/ArticuloSunglassAdapterTest.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383333224055" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/model/ArticuloSunglassDescriptorTest.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383333224055" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/model/GrupoArticuloImportLineTest.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383333224055" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/model/LocalidadTest.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383333224055" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/model/EstadoTest.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383333224055" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/model/MunicipioTest.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383333224055" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/model/FileFormatTest.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383333224055" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/model/ClienteTest.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383333224055" ignored="false" />
+    <file path="/RComenderDialog.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383851689492" ignored="false" />
+    <file path="/CustomersPanelSample.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383347859129" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/service/impl/EliminarNotaVentaTaskIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383579359546" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/service/impl/PromotionsAdapterTest.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383579359547" ignored="false" />
+    <file path="/TwoDatesSelectionAndKeyDialog.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383590755497" ignored="false" />
+    <file path="/KardexReportDialog.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383842824764" ignored="false" />
+    <file path="/IOController.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384972666552" ignored="false" />
+    <file path="/CierreDiarioService.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384970054241" ignored="false" />
+    <file path="/InvTrView.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383925929783" ignored="false" />
+    <file path="/RequestAdapter.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383928903737" ignored="false" />
+    <file path="/InvTrViewMode.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383929027863" ignored="false" />
+    <file path="/PromotionModel.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383941001929" ignored="false" />
+    <file path="/PromotionSingle.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383945015751" ignored="false" />
+    <file path="/PromotionPart.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1383946314275" ignored="false" />
+    <file path="/DailyClosePanel.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384481242663" ignored="false" />
+    <file path="/ticket-resumen-diario.vm" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384272418582" ignored="false" />
+    <file path="/AccessController.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384366613913" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QRemesas.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384390407562" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QAcusesTipo.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384390407562" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QTipoContacto.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384390407563" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QJbNotas.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384390407563" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QTmpServicios.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384390407563" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QJbTrack.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384390407563" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QJbServicios.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384390407563" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/service/impl/ResourceManagerIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384881913251" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/service/impl/ArchiveTaskIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384881913251" ignored="false" />
+    <file path="$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/view/component/NumericTextField.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384881913251" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/repository/CompanyIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384881913251" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/service/io/ZDadapter.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384881913251" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/service/io/ZOadapter.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384881913251" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/service/io/PromotionsAdapter.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384881913251" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/util/IntegrationTest.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384881913270" ignored="false" />
+    <file path="/ArticuloSunglassImportTask.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384995388637" ignored="false" />
+    <file path="$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/view/driver/InvTrInBoundDriver.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384898262537" ignored="false" />
+    <file path="$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/view/driver/InvTrReceiptDriver.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384898262537" ignored="false" />
+    <file path="$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/model/adapter/Filter.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384898262537" ignored="false" />
+    <file path="/PartFileSunglass.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384995579649" ignored="false" />
+    <file path="/AdaptadorArticulo.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384907372548" ignored="false" />
+    <file path="/PriceListController.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385686838864" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/service/io/InvTrFile.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253914" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/service/io/EmployeeReader.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253914" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/service/io/MessageImportTask.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253914" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/service/io/ArticuloClassAdapter.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253914" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/service/io/ShippingNoticeFileSunglass.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253914" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/service/io/AsynchronousNotificationDispatcher.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253914" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/service/io/ZInFile.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253914" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/service/io/FxRateReader.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253914" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/service/io/ShippingNoticeFile.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253914" ignored="false" />
+    <file path="$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/view/driver/InvTrReturnDriver.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253915" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/util/FileFilterTest.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253916" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/service/impl/InventoryAdjustFileIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253964" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/service/impl/ArticuloSunglassImportTaskIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253964" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/service/impl/EmployeeImportTaskIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253964" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/service/impl/PartFileSunglassIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253964" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/service/impl/InventarioServiceIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253964" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/service/impl/MensajeServiceIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253964" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/test/groovy/mx/lux/pos/service/impl/ZInFileIntegration.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253964" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/util/StringList.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253965" ignored="false" />
+    <file path="$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/model/file/DateFileFiltered.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253965" ignored="false" />
+    <file path="$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/model/file/SimpleFileFiltered.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253965" ignored="false" />
+    <file path="$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/model/file/FileFiltered.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253965" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/util/MoneyUtils.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253965" ignored="false" />
+    <file path="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/util/SunglassUtils.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1384997253965" ignored="false" />
+    <file path="/ReportService.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385598273317" ignored="false" />
+    <file path="/TrabajosSinEntregar.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385137913540" ignored="false" />
+    <file path="/PromotionDriver.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385164555388" ignored="false" />
+    <file path="/ContactDialog.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385484960588" ignored="false" />
+    <file path="/Rx.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385491616931" ignored="false" />
+    <file path="/RXPanel.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385492659189" ignored="false" />
+    <file path="/ComprobanteService.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385500564194" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QAcuse.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032945" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QTipoTransInv.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QRetorno.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QBancoDeposito.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QModificacionPag.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QComprobante.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QGrupoArticulo.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QTipoDetalle.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QClasifCliente.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QCliente.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QReimpresion.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QMensaje.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QDetalleComprobante.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QLocalidad.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QEstado.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QGenerico.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QCotizaDet.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QOrdenProm.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QSucursal.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QMoneda.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QCondicionIcGener.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QTipoPago.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QMunicipio.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QExistencia.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032946" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QRetornoDet.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QResumenDiario.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QListaPrecios.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QCierreDiario.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QModificacionImp.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QPromocion.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QPaises.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QTrabajoEstado.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QExterno.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QExamen.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QTitulo.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QPlan.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QGrupoArticuloDet.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QParametro.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QModificacionCan.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QMonedaDetalle.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QRelacionPlan.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QClientePais.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QImpuesto.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QDeposito.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QInstitucionIc.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032947" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QMensajeAlt.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032948" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QResumenTerminal.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032948" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QDominio.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032948" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QEntregadoExterno.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032948" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QContribuyente.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032948" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QCausaCancelacion.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032948" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QVoucherTmp.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032948" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QPagoExterno.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032948" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QTerminal.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032948" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QFormaPago.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032948" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QApertura.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032948" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QBanco.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385579032948" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QDetalleNotaVenta.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422041" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QEmpleado.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QTrabajo.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QPago.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QCotizacion.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QBancoEmisor.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QJb.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QTransInvDetalle.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QDevolucion.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QNotaVenta.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QTrabajoTrack.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QDescuentoClave.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QTransInv.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QDescuento.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QReceta.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QNotaFactura.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QModificacionEmp.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QPrecio.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QModificacion.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QOrdenPromDet.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385669422042" ignored="false" />
+    <file path="/PriceList.groovy" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385686040049" ignored="false" />
+    <file path="$PROJECT_DIR$/core/build/generated-sources/mx/lux/pos/model/QArticulo.java" changelist="02088725-c760-4ef2-905a-60871cf1ba9e" time="1385688607267" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="&#13;&#13;JAVA" />
+        <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="&#13;&#13;JAVA" />
+        <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
+      </breakpoint>
+    </breakpoint_any>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/controller/OrderController.groovy" line="498" class="mx.lux.pos.ui.controller.OrderController" package="mx.lux.pos.ui.controller">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="jpv" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="MainWindow.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/MainWindow.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="524" column="37" selection-start="21515" selection-end="21515" vertical-scroll-proportion="0.99">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PriceListController.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/controller/PriceListController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="162" column="51" selection-start="6714" selection-end="6714" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PriceList.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/model/PriceList.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="9" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Item.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/model/Item.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="96" selection-start="723" selection-end="723" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListaPreciosServiceImpl.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/service/impl/ListaPreciosServiceImpl.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="238" column="0" selection-start="10337" selection-end="10337" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1385742693455" expanded="true" signature="2941:3064" placeholder="/*...*/" />
+                <marker date="1385742693455" expanded="true" signature="6221:6348" placeholder="/*...*/" />
+                <marker date="1385742693455" expanded="true" signature="6686:7571" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/model/TipoParametro.groovy" />
+        <option value="$PROJECT_DIR$/core/src/main/resources/database.properties" />
+        <option value="$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/view/panel/OrderPanel.groovy" />
+        <option value="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/service/impl/ComprobanteServiceImpl.groovy" />
+        <option value="$PROJECT_DIR$/reports/src/main/java/mx/lux/pos/service/ReportService.java" />
+        <option value="$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/controller/ReportController.groovy" />
+        <option value="$PROJECT_DIR$/core/src/main/java/mx/lux/pos/model/DescuentosPorTipo.java" />
+        <option value="$PROJECT_DIR$/reports/src/main/java/mx/lux/pos/service/impl/ReportServiceImpl.java" />
+        <option value="$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/controller/OrderController.groovy" />
+        <option value="$PROJECT_DIR$/reports/src/main/java/mx/lux/pos/service/business/ReportBusiness.java" />
+        <option value="$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/model/PriceList.groovy" />
+        <option value="$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/model/Item.groovy" />
+        <option value="$PROJECT_DIR$/core/src/main/java/mx/lux/pos/model/Articulo.java" />
+        <option value="$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/controller/PriceListController.groovy" />
+        <option value="$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/service/impl/ListaPreciosServiceImpl.groovy" />
+        <option value="$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/MainWindow.groovy" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1" />
+    <option name="y" value="24" />
+    <option name="width" value="1282" />
+    <option name="height" value="673" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="96" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="98" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="96" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="101" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="896" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="896" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="101" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="98" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mx.lux.pos.model" />
+      <recent name="mx.lux.pos.ui.view.dialog" />
+      <recent name="mx.lux.pos.repository" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/core/src/main/resources/template" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainWindow">
+    <configuration default="false" name="MainWindow" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="mx.lux.pos.ui.MainWindow" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ui" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="NotaVentaServiceImplTest.corre script de respaldo de ventas" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="core" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="mx.lux.pos.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="mx.lux.pos.service.impl.NotaVentaServiceImplTest" />
+      <option name="METHOD_NAME" value="corre script de respaldo de ventas" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CustomersPanelSample" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="mx.lux.pos.ui.view.CustomersPanelSample" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ui" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Application.MainWindow" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.NotaVentaServiceImplTest.corre script de respaldo de ventas" />
+      <item index="2" class="java.lang.String" itemvalue="Application.CustomersPanelSample" />
+    </list>
+    <recent_temporary>
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Application.MainWindow" />
+        <item index="1" class="java.lang.String" itemvalue="Application.CustomersPanelSample" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.NotaVentaServiceImplTest.corre script de respaldo de ventas" />
+      </list>
+    </recent_temporary>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="02088725-c760-4ef2-905a-60871cf1ba9e" name="Default" comment="" />
+      <created>1380826533485</created>
+      <updated>1380826533485</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1" y="24" width="1282" height="673" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32633588" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6145038" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.39122137" sideWeight="0.6734198" order="5" side_tool="false" content_ui="tabs" x="23" y="258" width="1234" height="205" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.379771" sideWeight="0.32658023" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24797407" sideWeight="0.620229" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32824427" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32761905" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24878444" sideWeight="0.6183206" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24797407" sideWeight="0.620229" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32824427" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3072519" sideWeight="0.6701783" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32633588" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$PROJECT_DIR$/../lib/contents/jasperreports/4.7.0/source/jasperreports-4.7.0.jar!/net/sf/jasperreports/engine/JRExporterParameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="153" column="44" selection-start="5960" selection-end="5960" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/mx/lux/pos/model/DescuentosPorTipo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="5" selection-start="3176" selection-end="3176" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/controller/AccessController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="16" selection-start="1920" selection-end="1921" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/view/panel/LogInPanel.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="43" selection-start="2273" selection-end="2273" vertical-scroll-proportion="1.4821428">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/local/java/jdk1.6.0_39/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2767" column="25" selection-start="106366" selection-end="106366" vertical-scroll-proportion="0.33214286" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/controller/ReportController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="341" column="35" selection-start="16279" selection-end="16279" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/src/main/java/mx/lux/pos/service/impl/ReportServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="26" selection-start="3266" selection-end="3266" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/controller/OrderController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1234" column="134" selection-start="50438" selection-end="50438" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/src/main/java/mx/lux/pos/service/business/ReportBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="221" column="87" selection-start="7874" selection-end="7874" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/model/PriceList.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="9" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../lib/contents/hibernate-jpa-2.0-api/1.0.1.Final/source/hibernate-jpa-2.0-api-1.0.1.Final.jar!/javax/persistence/Transient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="18" selection-start="1434" selection-end="1434" vertical-scroll-proportion="0.7590361" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/mx/lux/pos/model/Articulo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="393" column="30" selection-start="9441" selection-end="9441" vertical-scroll-proportion="0.78350514" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/controller/PriceListController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="162" column="51" selection-start="6714" selection-end="6714" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/model/Item.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="96" selection-start="723" selection-end="723" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/groovy/mx/lux/pos/service/impl/ListaPreciosServiceImpl.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="238" column="0" selection-start="10337" selection-end="10337" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1385742693455" expanded="true" signature="2941:3064" placeholder="/*...*/" />
+            <marker date="1385742693455" expanded="true" signature="6221:6348" placeholder="/*...*/" />
+            <marker date="1385742693455" expanded="true" signature="6686:7571" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/groovy/mx/lux/pos/ui/MainWindow.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="524" column="37" selection-start="21515" selection-end="21515" vertical-scroll-proportion="0.99">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="Copyright.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>core</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Venta_vendedor_Compl_Facturas" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="f9fe1b90-4b96-44f6-93dd-fe3e6dfc97eb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="contador" class="java.math.BigDecimal"/>
+	<parameter name="noFacturas" class="java.lang.String"/>
+	<field name="idFactura" class="java.lang.String"/>
+	<field name="montoPagoSinIVA" class="java.math.BigDecimal"/>
+	<field name="fechaPago" class="java.util.Date"/>
+	<field name="montoPagoIVA" class="java.math.BigDecimal"/>
+	<field name="iva" class="java.math.BigDecimal"/>
+	<field name="acumulaPago" class="java.math.BigDecimal"/>
+	<field name="contador" class="java.math.BigDecimal"/>
+	<field name="existencia" class="java.lang.String"/>
+	<field name="noFacturas" class="java.lang.String"/>
+	<variable name="montoPagoIVA_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{montoPagoIVA}]]></variableExpression>
+	</variable>
+	<variable name="montoPagoSinIVA_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{montoPagoSinIVA}]]></variableExpression>
+	</variable>
+	<variable name="montoPagoSinIVA_2" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{montoPagoSinIVA}]]></variableExpression>
+	</variable>
+	<variable name="idFactura_1" class="java.lang.Integer" incrementType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{idFactura}]]></variableExpression>
+		<initialValueExpression><![CDATA[1]]></initialValueExpression>
+	</variable>
+	<variable name="promedio" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$V{montoPagoSinIVA_1}.divide( $P{contador}, 10, RoundingMode.HALF_EVEN )]]></variableExpression>
+		<initialValueExpression><![CDATA[$F{montoPagoSinIVA}]]></initialValueExpression>
+	</variable>
+	<variable name="contador" class="java.lang.Integer">
+		<variableExpression><![CDATA[1]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<variable name="columna" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$V{COLUMN_COUNT}]]></variableExpression>
+		<initialValueExpression><![CDATA[1]]></initialValueExpression>
+	</variable>
+	<variable name="totalIva" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$V{montoPagoSinIVA_1}.divide( $F{iva}.add( new BigDecimal(1.00) ), 10, RoundingMode.HALF_DOWN )]]></variableExpression>
+	</variable>
+	<variable name="contador_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{contador}]]></variableExpression>
+	</variable>
+	<variable name="idFactura_2" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{idFactura}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="14">
+			<staticText>
+				<reportElement uuid="96175b3f-8973-4d0e-8e0d-ef1916eb7c1c" x="0" y="0" width="44" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4c13f481-a241-4541-a73d-c08a1a0de523" x="44" y="0" width="68" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f9780300-c6dd-4acf-8d17-8593084f8a47" x="184" y="0" width="86" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Venta Neta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bafd3240-9b7f-4af2-8798-06f4028a4d2d" x="112" y="0" width="72" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Piezas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement uuid="b0468570-7167-4c9a-ad47-f5439d91619f" x="0" y="0" width="44" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{montoPagoSinIVA}.compareTo( BigDecimal.ZERO ) > 0 || $F{montoPagoSinIVA}.compareTo( BigDecimal.ZERO ) < 0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idFactura}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="18c01d8a-e6a1-4b55-ba67-8f01f5b2ddff" x="184" y="0" width="86" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{montoPagoSinIVA}.compareTo( BigDecimal.ZERO ) > 0 || $F{montoPagoSinIVA}.compareTo( BigDecimal.ZERO ) < 0]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{montoPagoSinIVA}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="dd477dc4-2337-481a-a785-52f5bcd220e7" x="44" y="0" width="68" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{montoPagoSinIVA}.compareTo( BigDecimal.ZERO ) > 0 || $F{montoPagoSinIVA}.compareTo( BigDecimal.ZERO ) < 0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaPago}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3cb9c094-53dd-45a7-867d-7d127b2ecddd" x="325" y="0" width="100" height="14">
+					<printWhenExpression><![CDATA[$F{idFactura} == null && $F{fechaPago} == null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans Mono"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{iva}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="a3a19c87-7327-457e-8f11-842a150dcfc9" x="112" y="0" width="72" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{existencia}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="58">
+			<staticText>
+				<reportElement uuid="6bdd1efe-b1d7-4aee-ba69-3527dc990116" x="0" y="2" width="100" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<text><![CDATA[Monto Total:]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="6501fcce-e23a-40b9-91a4-66c24ddd429d" x="0" y="1" width="270" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField pattern="$#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="ba32b85d-35e0-43a8-8620-3f487f82bb11" x="184" y="2" width="86" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{montoPagoSinIVA_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="6bdd1efe-b1d7-4aee-ba69-3527dc990116" x="0" y="30" width="100" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<text><![CDATA[Total Sin IVA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="008a0d0d-d055-4db8-957b-ad8c5dfc4f0c" x="0" y="44" width="100" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<text><![CDATA[Promedio:]]></text>
+			</staticText>
+			<textField pattern="$#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="e3dd9951-ccc8-4531-bcc2-97d2c3c89b4f" x="184" y="44" width="86" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{promedio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="f3f2137e-3b69-4745-a041-d7d1b2d2921c" x="184" y="30" width="86" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalIva}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9c352605-7a6f-4706-a8da-0631523113db" x="325" y="16" width="100" height="14">
+					<printWhenExpression><![CDATA[$F{idFactura} == null && $F{fechaPago} == null]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{contador_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="078c6422-a4ee-4168-9736-e64993d68b7c" x="0" y="16" width="100" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<text><![CDATA[Total Facturas:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="b0a4c9d1-c6bb-46a6-bc30-107eb5376ad7" x="184" y="16" width="86" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{noFacturas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

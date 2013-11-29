@@ -1,0 +1,66 @@
+#parse("template/constantes-impresora.vm")
+#parse("template/macros.vm")
+#define($COLUMNAS)${GS}P${writer.write(32)}${writer.write(32)}#end
+#define($COL_DET_1)${ESC}${writer.write(36)}${writer.write(10)}${writer.write(0)}#end
+#define($COL_DET_2)${ESC}${writer.write(36)}${writer.write(25)}${writer.write(0)}#end
+#define($COL_DET_3)${ESC}${writer.write(36)}${writer.write(69)}${writer.write(0)}#end
+## Inicia ticket
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)${compania.shortName}${LF}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)${compania.name}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${compania.address_1}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${compania.address_2}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${compania.address_3}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${compania.taxId}${LF}
+#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)#altnull(${sucursal.nombre}) [#altnull(${sucursal.id})]
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${sucursal.direccion})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${sucursal.colonia})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${sucursal.ciudad})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)Tel: #altnull(${sucursal.telefonos})${CR}
+#ALINEAR_DERECHA()#SET_STYLE(${FUENTE_A} ${NEGRITA} 0 0 0)Ticket: #altnull(${sucursal.centroCostos})-#altnull(${nota_venta.factura})${LF}
+#SET_STYLE(${FUENTE_A} ${NEGRITA} 0 0 0)SOI: #altnull(${nota_venta.id})${LF}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)Fecha: #altnull(${fecha})${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${sucursal.ciudad}) #altnull(${hora}) hrs.
+#LINEA_SEPARACION_SIMPLE()
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)VENTA${LF}
+#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)CLIENTE: #altnull(${cliente.nombreCompleto(true)})${CR}
+#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)RFC: #altnull(${cliente.rfc})${LF}
+#ETIQUETA_VALOR("Le atendio:" "#altnull(${empleado})")
+#LINEA_SEPARACION_SIMPLE()
+${COLUMNAS}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 ${SUBRAYADO})CANT.${COL_DET_1}ARTICULO${COL_DET_3}PRECIO
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#foreach( $det in $detalles )${det.cantidad}${COL_DET_1}${det.descripcion1}${COL_DET_3}${det.precio}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${COL_DET_1}${det.descripcion2}
+#end${LF}
+#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)Articulos: #altnull(${articulos})${LF}
+#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)${COL_DET_2}Subtotal:${COL_DET_3}#altnull(${subtotal})${CR}
+#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)${COL_DET_2}Descto:${COL_DET_3}#altnull(${descuento})${CR}
+#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)${COL_DET_2}Total:${COL_DET_3}#altnull(${venta_neta})${CR}
+#ALINEAR_DERECHA()#SET_STYLE(${FUENTE_B} 0 0 0 0)#altnull(${texto_venta_neta})${CR}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_B} 0 0 0 0)#foreach( $pago in $pagos )${COL_DET_2}${pago.tipo_pago}${COL_DET_3}${pago.monto}${LF}#end${CR}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_B} 0 0 0 0)#foreach( $comentario in $comentarios )${comentario}${LF}#end${CR}
+#if( $existPromo != '' )#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)                      PROMOCIONES:
+#foreach( $promocion in $promociones )          ${promocion}${LF}#end${CR}
+#end
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_B} 0 0 0 0)Pago hecho en una sola exhibicion
+#LINEA_SEPARACION_SIMPLE()
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)POLIZA DE GARANTIA
+#SET_STYLE(${FUENTE_B} 0 0 0 0)Garantia con SUNGLASS ISLAND de 60 dias.
+#SET_STYLE(${FUENTE_B} 0 0 0 0)- Warranty 60 days with SUNGLASS ISLAND -
+#SET_STYLE(${FUENTE_B} 0 0 0 0)La garantia no es valida en cristales y micas.
+#SET_STYLE(${FUENTE_B} 0 0 0 0)- Warranty does not apply on lenses -
+#SET_STYLE(${FUENTE_B} 0 0 0 0)No se aceptan devoluciones - No refunds -.
+#SET_STYLE(${FUENTE_B} 0 0 0 0)La garantia aplica en terminos de la LEY FEDERAL DE
+#SET_STYLE(${FUENTE_B} 0 0 0 0)PROTECCION AL CONSUMIDOR.
+#SET_STYLE(${FUENTE_B} 0 0 0 0)This warranty applies in the terms stated by the
+#SET_STYLE(${FUENTE_B} 0 0 0 0)LEY FEDERAL DE PROTECCION AL CONSUMIDOR.
+#LINEA_SEPARACION_SIMPLE()
+${LF}
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)GRACIAS POR SU PREFERENCIA
+#if( ${despliega_atencion_a_clientes} )
+#SET_STYLE(${FUENTE_B} 0 0 0 0)ATENCION A CLIENTES
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${compania.phone}
+#SET_STYLE(${FUENTE_B} 0 0 0 ${SUBRAYADO})${compania.webAddress}${LF}
+#end
+#SET_STYLE(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)#altnull(${sucursal.centroCostos})-#altnull(${nota_venta.factura})${LF}
+#AVANZAR_LINEAS(4)
+#CORTE()

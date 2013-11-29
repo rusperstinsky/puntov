@@ -1,0 +1,37 @@
+#parse("template/constantes-impresora.vm")
+#parse("template/macros.vm")
+#macro(TITULO_TICKET)#NEGRITA()#DOBLE_ALTURA()#DOBLE_ANCHURA()#FUENTE_B()#DO()#end
+#define($COLUMNAS)${GS}P${writer.write(32)}${writer.write(32)}#end
+#define($COL_DET_0)${ESC}${writer.write(36)}${writer.write(5)}${writer.write(0)}#end
+#define($COL_DET_0_5)${ESC}${writer.write(36)}${writer.write(8)}${writer.write(0)}#end
+#define($COL_DET_1)${ESC}${writer.write(36)}${writer.write(20)}${writer.write(0)}#end
+#define($COL_DET_2)${ESC}${writer.write(36)}${writer.write(55)}${writer.write(0)}#end
+#define($COL_DET_3)${ESC}${writer.write(36)}${writer.write(64)}${writer.write(0)}#end
+## Inicia ticket
+${COLUMNAS}#ALINEAR_CENTRO()#SEPARACION()${LF}
+#TITULO_TICKET()SALIDA DE MERCANCIA
+#RESET_TEXTO()#DO()#SEPARACION()${LF}
+#ALINEAR_DERECHA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)Fecha: ${effDate}      #FIN_ESTILO()${LF}
+#ALINEAR_IZQUIERDA()
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)    Sucursal: ${thisSite}#FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)    Empleado: ${user}#FIN_ESTILO()${CR}
+#SEPARACION()${LF}
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)       Folio: ${trNbr}#FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)Alm. Destino: ${siteTo}#FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)         Obs: ${remarks_1}#FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)              ${remarks_2}#FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)    Cantidad: ${quantity}#FIN_ESTILO()${CR}
+#SEPARACION()${LF}
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0)${COL_DET_0}SKU${COL_DET_1}Articulo${COL_DET_2}Cantidad#FIN_ESTILO()${CR}
+#foreach( $part in $parts )
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${COL_DET_0}${part.sku}${COL_DET_1}${part.partNbr}${COL_DET_2}   ${part.qty}#FIN_ESTILO()${CR}
+#end
+##${LF}#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)   Articulos: #altnull(${parts.size()})#FIN_ESTILO()${LF}
+#AVANZAR_LINEAS(2)
+${COL_DET_0_5}#CODIGO_BARRAS(${codaleatorio}, 3, 1)
+#AVANZAR_LINEAS(2)
+#ALINEAR_CENTRO()#SIN_NEGRITA()#DO()#LINEA_FIRMA()${CR}
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0)${mgr}#FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)AUTORIZA GERENTE#FIN_ESTILO()${CR}
+#AVANZAR_LINEAS(5)
+#CORTE()

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ventas_Por_Optometrista_Resumido_Detalle" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="a5a9ae99-738d-4a7d-878e-7d99fa697703">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="idEmpleado" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="noFacturas" class="java.math.BigDecimal"/>
+	<field name="totalPagos" class="java.math.BigDecimal"/>
+	<field name="totalPagosIva" class="java.math.BigDecimal"/>
+	<variable name="promedio" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$F{totalPagos}.divide( $F{noFacturas}, 10, RoundingMode.HALF_EVEN )]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="33">
+			<staticText>
+				<reportElement uuid="c31b2735-8213-4ae2-be2a-9bebd2eafc52" x="0" y="19" width="263" height="14"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Optometrista]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7074e89d-02a3-43d4-a658-dacffe688253" x="263" y="19" width="96" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de Examenes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3a7cf529-b795-4aea-aef4-bb63e1172884" x="359" y="19" width="72" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Monto Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7fe32492-225d-4221-968a-16d9e6026846" x="431" y="19" width="72" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Promedio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8e545930-95d6-4c47-84f4-6967f9f63f8c" x="503" y="19" width="72" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Monto sin IVA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField>
+				<reportElement uuid="0be070a4-4369-484a-b5e5-15801752b71a" x="263" y="0" width="96" height="14"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noFacturas}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00">
+				<reportElement uuid="91953912-3cdf-4fea-bb53-7ff22ab13488" x="359" y="0" width="72" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalPagos}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00">
+				<reportElement uuid="a9bb1563-c708-4f92-94f2-bb952bd43111" x="503" y="0" width="72" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalPagosIva}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3b1b552a-441d-40d9-9e3f-4a20f47f3d77" x="0" y="0" width="35" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idEmpleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5f554b41-0e12-4012-868f-1a7c0c3b5b59" x="35" y="0" width="228" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.00">
+				<reportElement uuid="143759d9-e25f-4a59-9f96-581687c2f7a0" x="431" y="0" width="72" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{promedio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

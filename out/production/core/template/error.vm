@@ -1,0 +1,6 @@
+#parse("template/constantes-impresora.vm")
+#parse("template/macros.vm")
+## Inicia ticket
+ERROR: ${mensaje}
+${LF}${LF}${LF}${LF}${LF}
+#CORTE()

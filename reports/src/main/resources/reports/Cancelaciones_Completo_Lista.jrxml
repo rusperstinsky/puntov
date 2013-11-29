@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cancelaciones_Completo_Lista" language="groovy" pageWidth="756" pageHeight="842" columnWidth="756" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="86b60ea9-a7aa-4f05-b50c-c0ac4511f08b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="83"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/opticalux/proyectos/jpv/reports/src/main/resources/reports/"]]></defaultValueExpression>
+	</parameter>
+	<field name="fechaPago" class="java.util.Date"/>
+	<field name="fechaCancelacion" class="java.util.Date"/>
+	<field name="modId" class="java.lang.String"/>
+	<field name="idFactura" class="java.lang.String"/>
+	<field name="lstDetalles" class="java.util.Collection"/>
+	<field name="empleado" class="java.lang.String"/>
+	<group name="Group1">
+		<groupExpression><![CDATA[(int)($V{REPORT_COUNT}/15)]]></groupExpression>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[(int)($V{REPORT_COUNT}/5)]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="6d85a8ed-ff46-449a-b919-7d553916b393" x="9" y="0" width="72" height="12"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaPago}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="8750f1c6-ab3a-4503-a08b-9701a26e571b" x="81" y="0" width="94" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaCancelacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="edd0d114-3207-4cdd-a4a0-35c40ee40d08" x="199" y="0" width="44" height="12"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{modId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4f5d7039-d968-495a-8283-e397e2583e94" x="243" y="0" width="45" height="12"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idFactura}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="a22175a0-3140-4f94-98bd-afbc462aa02a" x="288" y="0" width="173" height="14"/>
+				<subreportParameter name="SUBREPORT_DIR"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{lstDetalles})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/Cancelaciones_Completo_Articulos.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement uuid="0c734b04-172a-4d3c-b122-922f22d3c18c" x="461" y="0" width="198" height="12"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{empleado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

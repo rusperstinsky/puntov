@@ -1,0 +1,22 @@
+#parse("template/constantes-impresora.vm")
+#parse("template/macros.vm")
+#define($COLUMNAS)${GS}P${writer.write(32)}${writer.write(32)}#end
+#define($COL_DET_1)${ESC}${writer.write(36)}${writer.write(25)}${writer.write(0)}#end
+#define($COL_DET_1_5)${ESC}${writer.write(36)}${writer.write(40)}${writer.write(0)}#end
+#define($COL_DET_2)${ESC}${writer.write(36)}${writer.write(60)}${writer.write(0)}#end
+## Inicia ticket
+#LINEA_SEPARACION()
+#SET_STYLE(${FUENTE_A} 0 ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)  ARMAZON SURTE PINO${CR}
+#SET_STYLE(${FUENTE_A} 0 ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)      NO SURTIDO${CR}
+#LINEA_SEPARACION()
+${COLUMNAS}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)${COL_DET_2}#INICIO_NEGRITAS()FECHA: #FIN_NEGRITAS()${fecha}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#INICIO_NEGRITAS()SUCURSAL: #FIN_NEGRITAS()#SET_STYLE(${FUENTE_B} 0 0 0 0)${sucursal}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#INICIO_NEGRITAS()CODIGO: #FIN_NEGRITAS()#SET_STYLE(${FUENTE_B} 0 0 0 0)${armazones.articulo}   #SET_STYLE(${FUENTE_B} 0 0 0 0)#INICIO_NEGRITAS()COLOR: #FIN_NEGRITAS()#SET_STYLE(${FUENTE_B} 0 0 0 0)${armazones.codigoColor}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#INICIO_NEGRITAS()FACTURA: #FIN_NEGRITAS()${factura}
+
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#INICIO_NEGRITAS()         ANEXAR A COMPROBANTE DE CANCELACION.#FIN_NEGRITAS()${CR}
+#LINEA_SEPARACION()
+#FIN_ESTILO()
+#AVANZAR_LINEAS(5)
+#CORTE()

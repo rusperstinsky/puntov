@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Lista_de_Promociones_Det" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="454e00f3-37c5-418a-8da7-5af5ee055206">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="idPromocion" class="java.lang.String"/>
+	<field name="descripcion" class="java.lang.String"/>
+	<field name="vigenciaIni" class="java.util.Date"/>
+	<field name="vigenciaFin" class="java.util.Date"/>
+	<field name="tipoPromocion" class="java.lang.String"/>
+	<field name="idGenerico" class="java.lang.String"/>
+	<field name="tipo" class="java.lang.String"/>
+	<field name="subtipo" class="java.lang.String"/>
+	<field name="marca" class="java.lang.String"/>
+	<field name="articulo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6dd89baa-d30d-42aa-ac3b-5b72f14011db" x="0" y="0" width="25" height="15"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f80f5300-90c4-4d70-8ab9-8620c430ed54" x="25" y="0" width="157" height="15"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0b973bab-ead5-445c-98d8-b23687ad0f2d" x="182" y="0" width="75" height="15"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Inicio Vigencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="208ce763-0c0c-4e5c-8569-b2187fc67cc9" x="257" y="0" width="65" height="15"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fin Vigencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b280a201-12f2-47e8-ac98-3d4a96728dad" x="322" y="0" width="51" height="15"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="160b6597-116a-41c1-9493-08388862a87b" x="373" y="0" width="47" height="15"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Generico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a1d58f21-8bba-4f2b-8913-1a6127f3c7ba" x="420" y="0" width="33" height="15"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="75a10fda-a2b0-478e-ab3c-e3c11fe39ad8" x="453" y="0" width="50" height="15"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Subtipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="91b519e2-aa32-4476-9a03-30fa0751dab8" x="503" y="0" width="46" height="15"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ca65b58a-edac-405e-8f14-ce68bbed4116" x="549" y="0" width="63" height="15"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Articulo]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="769c7b14-7c51-4c29-bc0f-8ffb86d59275" x="0" y="0" width="25" height="15"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idPromocion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="3c826151-c6c5-4d8f-affd-7ca92e631949" x="25" y="0" width="157" height="15"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="41aea76f-555a-4405-81f6-32ab0af3a3bf" x="182" y="0" width="75" height="15"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vigenciaIni}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="699d46e5-e8d0-4545-833e-61d54001554a" x="257" y="0" width="65" height="15"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vigenciaFin}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="d6e41c77-68e2-4b95-864a-074e65a3f247" x="322" y="0" width="51" height="15"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipoPromocion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="20c6b107-0418-4c1d-baca-35e942887b8c" x="373" y="0" width="47" height="15"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idGenerico}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="b3ed0a87-c528-4e73-bd24-d5fd62b6959e" x="420" y="0" width="33" height="15"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="0e51b794-b3b1-41be-9996-9da0de563954" x="453" y="0" width="50" height="15"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subtipo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="8c650b3b-2f01-4d9d-bbcf-fc88b2ddcff6" x="503" y="0" width="46" height="15"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{marca}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="88ce28d1-934b-43e7-bd94-622a8755e0a5" x="549" y="0" width="63" height="15"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{articulo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

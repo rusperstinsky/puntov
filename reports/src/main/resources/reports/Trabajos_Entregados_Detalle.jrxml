@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Trabajos_Entregados_Detalle" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7a041889-65a7-429c-8962-915ad502aa8b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="fecha" class="java.util.Date"/>
+	<field name="id" class="java.lang.String"/>
+	<field name="trabajo.empleado.nombreCompleto" class="java.lang.String"/>
+	<field name="trabajo.material" class="java.lang.String"/>
+	<field name="trabajo.empAtendio" class="java.lang.String"/>
+	<variable name="fecha_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{fecha}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="46fcd465-49ca-499b-b8b4-b36762c141d8" x="0" y="0" width="66" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="aa489018-ace3-4d01-a5ba-764dc787499b" x="66" y="0" width="42" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bc19d984-1219-4de6-bc59-621756b2b18b" x="118" y="0" width="203" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Empleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fca41126-c396-42c6-a309-85a7e4172e15" x="321" y="0" width="48" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Material]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="59725374-5763-49a4-b0f0-eac69d3c7e29" x="0" y="0" width="66" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c282d5af-9f8e-4e20-9337-a0199fd0a8c8" x="66" y="0" width="42" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="be7a4551-8427-427d-a5f2-db0a07f4508b" x="321" y="0" width="119" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{trabajo.material}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7986a487-a989-4ee4-a9c3-56533fda82b8" x="118" y="0" width="27" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{trabajo.empAtendio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f2cf024c-8f98-482a-b918-17dc970ce4ad" x="145" y="0" width="176" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{trabajo.empleado.nombreCompleto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="16">
+			<textField>
+				<reportElement uuid="21db48f1-9b8c-424d-ab1e-8305d7246d1c" x="76" y="2" width="100" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{fecha_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="ce1c2929-aa6e-4145-b9ee-cd50b8d624d7" x="0" y="2" width="76" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="876f8a7d-691e-43f4-b8ca-9a3479dd9ee0" x="0" y="1" width="440" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,128 @@
+apply plugin: 'application'
+
+mainClassName = 'mx.lux.pos.ui.MainWindow'
+
+dependencies {
+  compile project( ':ui' )
+}
+
+startScripts {
+    doLast {
+        def windowsScriptFile = file getWindowsScript()
+        def unixScriptFile    = file getUnixScript()
+        windowsScriptFile.text = windowsScriptFile.text.replace('set CLASSPATH=', 'set CLASSPATH=.;')
+        unixScriptFile.text    = unixScriptFile.text.replace('CLASSPATH=$APP_HOME', 'CLASSPATH=.:$APP_HOME')
+    }
+}
+
+allprojects {
+  apply plugin: 'java'
+  apply plugin: 'groovy'
+  apply plugin: 'idea'
+  apply plugin: 'eclipse'
+
+  group = 'mx.lux'
+  version = '1.0'
+
+  sourceCompatibility = 1.6
+  targetCompatibility = 1.6
+  compileJava.options.encoding = 'UTF-8'
+
+  ext {
+    springVersion = '3.1.2.RELEASE'
+    hibernateVersion = '4.0.1.Final'
+    querydslVersion = '2.7.0'
+    slf4jVersion = '1.6.1'
+    spockVersion = '0.6-groovy-1.8'
+  }
+
+  repositories {
+    ivy { 
+        url "/soi/lib/contents"
+        layout 'pattern', {
+            artifact "[module]/[revision]/[type]/[artifact]-[revision].[ext]"
+            ivy "[module]/[revision]/ivy.xml"
+        }
+    }
+  }
+
+  dependencies {
+    groovy 'org.codehaus.groovy:groovy-all:1.8.6'
+    compile 'joda-time:joda-time:2.1'
+    compile 'org.apache.ant:ant:1.8.4'
+    compile 'org.apache.commons:commons-lang3:3.1'
+    compile "org.slf4j:slf4j-api:${ext.slf4jVersion}"
+    compile "org.slf4j:jcl-over-slf4j:${ext.slf4jVersion}"
+    compile "org.slf4j:slf4j-log4j12:${ext.slf4jVersion}"
+    compile 'org.apache.velocity:velocity:1.7'
+    compile 'log4j:apache-log4j-extras:1.1'
+    testCompile 'junit:junit:4.9'
+    testCompile "org.springframework:spring-test:${ext.springVersion}"
+    testCompile "org.spockframework:spock-core:${ext.spockVersion}"
+    testCompile "org.spockframework:spock-spring:${ext.spockVersion}"
+  }
+
+  test {
+    include '**/*Test.*'
+  }
+
+  task integrationTest( type: Test, dependsOn: "test" ) << {
+    include '**/*Integration.*'
+  }
+}
+
+project( 'core' ) {
+  dependencies {
+    compile "org.springframework:spring-core:${ext.springVersion}"
+    compile "org.springframework:spring-context-support:${ext.springVersion}"
+    compile "org.springframework:spring-orm:${ext.springVersion}"
+    compile 'org.springframework.data:spring-data-jpa:1.1.1.RELEASE'
+    compile "org.hibernate:hibernate-core:${ext.hibernateVersion}"
+    compile "org.hibernate:hibernate-entitymanager:${ext.hibernateVersion}"
+    compile "org.hibernate:hibernate-validator:4.3.0.Final"
+    compile "org.hibernate:hibernate-c3p0:${ext.hibernateVersion}"
+    compile "org.hibernate:hibernate-ehcache:${ext.hibernateVersion}"
+    compile "com.mysema.querydsl:querydsl-apt:${ext.querydslVersion}"
+    compile "com.mysema.querydsl:querydsl-jpa:${ext.querydslVersion}"
+    compile 'postgresql:postgresql:9.1-901.jdbc4'
+    compile 'com.ibm.icu:icu4j:49.1'
+    runtime 'org.javassist:javassist:3.15.0-GA'
+  }
+
+  sourceSets {
+    metamodel {
+      java {
+        srcDir "${buildDir}/generated-sources"
+        output.classesDir = sourceSets.main.output.classesDir
+      }
+    }
+  }
+
+  compileJava {
+    doFirst {
+      def metamodelSrcDir = new File( "${buildDir}/generated-sources" )
+      metamodelSrcDir.mkdirs()
+      options.compilerArgs = [
+          '-processor', 'com.mysema.query.apt.jpa.JPAAnnotationProcessor',
+          '-s', metamodelSrcDir
+      ]
+    }
+  }
+
+}
+
+project( 'ui' ) {
+  dependencies {
+    compile project( ':core' )
+    compile project( ':reports' )
+    compile 'com.miglayout:miglayout-swing:4.2'
+  }
+}
+
+project( 'reports' ) {
+  dependencies {
+    compile project( ':core' )
+    compile 'net.sf.jasperreports:jasperreports:4.7.0'
+    compile 'net.sf.jasperreports:jasperreports-fonts:4.0.0'
+  }
+}

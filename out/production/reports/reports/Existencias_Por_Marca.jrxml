@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="Existencias_Por_Marca" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555"
+              leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20"
+              uuid="54689b3b-8d85-4206-833d-ef94fab589b4">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+    <style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+    <style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+    <style name="Detail" fontName="Arial" fontSize="12"/>
+    <parameter name="fechaInicio" class="java.lang.String"/>
+    <parameter name="fechaActual" class="java.lang.String"/>
+    <parameter name="fechaFin" class="java.lang.String"/>
+    <parameter name="sucursal" class="java.lang.String"/>
+    <parameter name="lstArticulos" class="java.util.List"/>
+    <parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression>
+            <![CDATA["/home/opticalux/proyectos/jpv/reports/src/main/resources/reports/"]]></defaultValueExpression>
+    </parameter>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="63" splitType="Stretch">
+            <textField>
+                <reportElement uuid="6c7fbabe-75a6-47ed-8d49-88a243190f07" x="523" y="32" width="37" height="18"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font fontName="DejaVu Sans" size="10" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement uuid="65675e50-6ccf-4a9b-b6da-bfc9afe626b0" x="187" y="32" width="247" height="18"/>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="DejaVu Sans" size="10" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{sucursal}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement uuid="ffe6a895-d208-477d-895d-2e075cc94b0d" x="6" y="62" width="554" height="1"/>
+            </line>
+            <staticText>
+                <reportElement uuid="5220a4ba-d547-4498-86ab-6ade7af30d88" style="Title" x="107" y="15" width="327"
+                               height="17"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="DejaVu Sans" size="8"/>
+                </textElement>
+                <text><![CDATA[REPORTE DE EXISTENCIAS POR MARCA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="5220a4ba-d547-4498-86ab-6ade7af30d88" style="Title" x="488" y="32" width="35"
+                               height="18"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="DejaVu Sans" size="10"/>
+                </textElement>
+                <text><![CDATA[Pag:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="5220a4ba-d547-4498-86ab-6ade7af30d88" style="Title" x="107" y="32" width="77"
+                               height="18"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font fontName="DejaVu Sans" size="10"/>
+                </textElement>
+                <text><![CDATA[Sucursal]]></text>
+            </staticText>
+            <textField pattern="h.mm a">
+                <reportElement uuid="bb239c15-560d-4dab-a13b-4bee54bb51c7" x="6" y="15" width="68" height="17"/>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="DejaVu Sans" size="10" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{fechaActual}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement uuid="b86a4d91-a506-4518-85ba-43c3ca87629c" x="6" y="3" width="554" height="1"/>
+            </line>
+        </band>
+    </title>
+    <detail>
+        <band height="125" splitType="Stretch">
+            <subreport>
+                <reportElement uuid="8aca7a43-9f33-4402-a294-51376bb60d05" x="0" y="25" width="572" height="100"/>
+                <dataSourceExpression>
+                    <![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstArticulos})]]></dataSourceExpression>
+                <subreportExpression><![CDATA["reports/Existencias_Por_Marca_Detalle.jasper"]]></subreportExpression>
+            </subreport>
+        </band>
+    </detail>
+</jasperReport>

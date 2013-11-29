@@ -1,0 +1,70 @@
+#parse("template/constantes-impresora.vm")
+#parse("template/macros.vm")
+#macro(TITULO_RECETA $factura)#INICIO_ESTILO(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)RECETA${HT}${HT}#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)FACTURA #INICIO_ESTILO(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)${factura}#FIN_ESTILO()${LF}#end
+#define($COLUMNAS)${GS}P${writer.write(32)}${writer.write(32)}#end
+#define($COL_DET_1)${ESC}${writer.write(36)}${writer.write(8)}${writer.write(0)}#end
+#define($COL_DET_2)${ESC}${writer.write(36)}${writer.write(22)}${writer.write(0)}#end
+#define($COL_DET_3)${ESC}${writer.write(36)}${writer.write(36)}${writer.write(0)}#end
+#define($COL_DET_4)${ESC}${writer.write(36)}${writer.write(50)}${writer.write(0)}#end
+#define($COL_DET_5)${ESC}${writer.write(36)}${writer.write(64)}${writer.write(0)}#end
+#define($COL_DET_6)${ESC}${writer.write(36)}${writer.write(78)}${writer.write(0)}#end
+#define($COL_7)${ESC}${writer.write(36)}${writer.write(70)}${writer.write(0)}#end
+#define($COL_DIST_1)${ESC}${writer.write(36)}${writer.write(25)}${writer.write(0)}#end
+#define($COL_DIST_2)${ESC}${writer.write(36)}${writer.write(39)}${writer.write(0)}#end
+#define($COL_DIST_3)${ESC}${writer.write(36)}${writer.write(70)}${writer.write(0)}#end
+## Inicia ticket
+${COLUMNAS}
+#CODIGO_BARRAS(${codigoBarrasAnchas.id}, 2, 0)
+#CODIGO_BARRAS(${codigoBarrasAnchas.sucursal}, 3, 1)
+#SEPARACION()
+#TITULO_RECETA(${codigoBarrasAnchas.factura})
+#SEPARACION()${LF}
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)SUCURSAL: ${infoTicket.sucursal}      ${infoTicket.fechaActual}#FIN_ESTILO()${CR}
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)FECHA SOLICITUD: ${infoTicket.fechaSolicitud} ${COL_7}${infoTicket.horaActual}#FIN_ESTILO()${CR}
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)FECHA DE ENTREGA PROMETIDA: ${infoTicket.fechaPrometida}${COL_7}SOI ${infoTicket.soi}#FIN_ESTILO()${CR}
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)RECETO: ${infoTicket.receto}${COL_7}#FIN_ESTILO()${CR}
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)ATENDIO: ${infoTicket.atendio}#FIN_ESTILO()${COL_7}#SET_STYLE(${FUENTE_A} 0 0 0 0)${codigoBarrasAnchas.noCopia}${CR}
+#SEPARACION()
+#ETIQUETA_VALOR("NOMBRE:" "#altnull(${cliente.nombre})")
+#ETIQUETA("TELEFONO ")#ETIQUETA_VALOR("CASA:" "#altnull(${cliente.telCasa})")
+#ETIQUETA_VALOR("TRABAJO:" "#altnull(${cliente.telTrab}) ext: #altnull(${cliente.extTrab})")
+#ETIQUETA_VALOR("ADICIONAL:" "#altnull(${cliente.telAd}) ext: #altnull(${cliente.extAd})")
+#ETIQUETA_VALOR("SALDO:" "#altnull(${cliente.saldo})")
+#ETIQUETA_VALOR("LENTE:" "#altnull(${cliente.lente})")
+#ETIQUETA_VALOR("ARTICULOS:" "#altnull(${cliente.articulos})")${CR}
+#ETIQUETA_VALOR("USO:" "#altnull(${lente.uso})")
+#ALINEAR_CENTRO()#SET_STYLE(${FUENTE_A} ${NEGRITA} 0 0 128)DETALLES#FIN_ESTILO()${LF}#ALINEAR_IZQUIERDA() ${CR}
+${COLUMNAS}#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)
+${COL_DET_1}ESFER${COL_DET_2}CILIND${COL_DET_3}EJE${COL_DET_4}ADD${COL_DET_5}PRISMA
+DER${COL_DET_1}#altnull(${lente.ODEsfer})${COL_DET_2}#altnull(${lente.ODCil})${COL_DET_3}#altnull(${lente.ODEje})${COL_DET_4}#altnull(${lente.ODAdd})${COL_DET_5}#altnull(${ODPris})${CR}
+IZQ${COL_DET_1}#altnull(${lente.OIEsfer})${COL_DET_2}#altnull(${lente.OICil})${COL_DET_3}#altnull(${lente.OIEje})${COL_DET_4}#altnull(${lente.OIAdd})${COL_DET_5}#altnull(${OIPris})${CR}
+DIST INT LEJOS: #altnull(${lente.distIntLejos})${COL_DIST_2}DIST MONOCULAR DER: #altnull(${lente.distMonoD})${CR}
+DIST INT CERCA: #altnull(${lente.distIntCercas})${COL_DIST_2}DIST MONOCULAR IZQ: #altnull(${lente.distMonoI})${CR}
+ALTURA SEGMENTO: #altnull(${lente.alturaSeg})
+#FIN_ESTILO()${LF}
+#ETIQUETA_VALOR("ARMAZON:" "#altnull(${lente.armazon})")
+#if($lente.surte == "S")#ALINEAR_CENTRO()#INICIO_ESTILO(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)SURTE SUCURSAL#FIN_ESTILO${LF}${LF}#end
+#if($lente.surte == "P")#ALINEAR_CENTRO()#INICIO_ESTILO(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)SURTE PINO#FIN_ESTILO${LF}${LF}#end
+#ETIQUETA_VALOR("TRATAMIENTO:" "#altnull(${lente.tratamiento})")
+#ETIQUETA_VALOR("MATERIAL ARMAZON:" "#altnull(${lente.material})")
+#ETIQUETA_VALOR("FORMA DEL LENTE:" "#altnull(${lente.formaLente})")
+#ETIQUETA_VALOR("OBSERVACIONES RECETA:" "#altnull(${comentarios.cometRx})")
+#ETIQUETA_VALOR("OBSERVACIONES FACTURA:" "#altnull(${comentarios.cometFactura})")
+#ETIQUETA("#altnull(${con_saldo})")
+#ETIQUETA("#altnull(${regreso_clases})")
+#ETIQUETA("#altnull(${convenio_nomina})")${CR}
+#TITULO_RECETA(${codigoBarrasAnchas.factura})${LF}
+#CODIGO_BARRAS(${codigoBarrasAnchas.factura}, 3, 1)
+#if($externo == true)#ALINEAR_CENTRO()#INICIO_ESTILO(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)EXTERNO#FIN_ESTILO()${LF}#ALINEAR_IZQUIERDA()${CR}
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0)ENVIAR A:#FIN_ESTILO()${CR}
+#ALINEAR_CENTRO()#INICIO_ESTILO(${FUENTE_A} ${NEGRITA} 0 0 0)${infoTicket.sucursal}#FIN_ESTILO()${LF}#ALINEAR_IZQUIERDA() ${LF}  #end
+#SEPARACION()${LF}
+#ALINEAR_CENTRO()AREA EXCLUSIVA PARA LABORATORIO: ${LF}
+#ALINEAR_IZQUIERDA()Causas de no ajuste:
+- Base del Lente.
+- Base del Armazon.
+- Tipo de Bisel.
+- Armazon del Cte. Especial.
+- Armazon del Cte. Maltratado.
+#AVANZAR_LINEAS(5)
+#CORTE()

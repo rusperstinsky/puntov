@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ventas_Por_Optometrista_Completo_Detalle" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="f659e9ea-63c8-4fee-ad5b-073cb19cc504">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/opticalux/proyectos/jpv/reports/src/main/resources/reports/"]]></defaultValueExpression>
+	</parameter>
+	<field name="idEmpleado" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="pagos" class="java.util.List"/>
+	<field name="facturas" class="java.lang.Integer"/>
+	<field name="totalPagos" class="java.math.BigDecimal"/>
+	<variable name="totalPagos_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{totalPagos}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="96321604-b275-4a0d-98b0-7acfffb001b6" x="0" y="0" width="100" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Optometrista]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="93ce3f87-0faf-4316-ba42-f4769b83db9f" x="135" y="0" width="202" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="bea09f65-2525-4c99-8d5e-6743366f1ef8" x="100" y="0" width="35" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idEmpleado}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="80d90e01-aadf-4401-986f-83065130e592" x="67" y="14" width="545" height="26"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{pagos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/Ventas_Por_Optometrista_Completo_Lista.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="34">
+			<staticText>
+				<reportElement uuid="69b50c3d-0194-42d8-b147-601c1dcb6f7a" x="67" y="20" width="53" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField pattern="$#,##0.00">
+				<reportElement uuid="0fae68c7-94a8-414b-a729-30de42d9e8c9" x="220" y="20" width="86" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalPagos}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="1605bc49-2c87-4a98-85fc-f792c8086c2b" x="67" y="19" width="294" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="d0b10b36-f79b-4d9d-9c7a-0862f5913495" x="159" y="20" width="61" height="14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Examenes]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="8366d066-3209-4eab-a084-a4d8b5aa9a15" x="120" y="20" width="39" height="14"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{facturas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

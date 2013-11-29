@@ -1,0 +1,29 @@
+#parse("template/constantes-impresora.vm")
+#parse("template/macros.vm")
+#define($COLUMNAS)${GS}P${writer.write(32)}${writer.write(32)}#end
+#define($COL_DET_0)${ESC}${writer.write(36)}${writer.write(0)}${writer.write(0)}#end
+#define($COL_DET_0_5)${ESC}${writer.write(36)}${writer.write(15)}${writer.write(0)}#end
+#define($COL_DET_1)${ESC}${writer.write(36)}${writer.write(25)}${writer.write(0)}#end
+#define($COL_DET_1_5)${ESC}${writer.write(36)}${writer.write(40)}${writer.write(0)}#end
+#define($COL_DET_2)${ESC}${writer.write(36)}${writer.write(60)}${writer.write(0)}#end
+## Inicia ticket
+#LINEA_SEPARACION()
+#SET_STYLE(${FUENTE_A} 0 ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)   AVISO DE REUSO
+#LINEA_SEPARACION()
+${COLUMNAS}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#INICIO_NEGRITAS()SUCURSAL: #FIN_NEGRITAS()#SET_STYLE(${FUENTE_B} 0 0 0 0)${sucursal}#SET_STYLE(${FUENTE_B} 0 0 0 0)${COL_DET_2}       ${fecha}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#INICIO_NEGRITAS()FACTURA ORIGINAL: #FIN_NEGRITAS()#SET_STYLE(${FUENTE_B} 0 0 0 0)${facturaOriginal}${COL_DET_2}       #SET_STYLE(${FUENTE_B} 0 0 0 0)${hora}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#INICIO_NEGRITAS()FACTURA: #FIN_NEGRITAS()${factura}${COL_DET_2}#SET_STYLE(${FUENTE_B} 0 0 0 0)#INICIO_NEGRITAS()SOI:     #FIN_NEGRITAS()#SET_STYLE(${FUENTE_B} 0 0 0 0)${idSoi}
+#LINEA_SEPARACION()
+
+                #SET_STYLE(${FUENTE_B} 0 ${DOBLE_ALTURA} 0 0)#INICIO_NEGRITAS()DETALLES #FIN_NEGRITAS()${LF}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 ${SUBRAYADO})${COL_DET_0}CANT.${COL_DET_0_5}CODIGO${CR}
+#SET_STYLE(${FUENTE_B} 0 0 0 0)#foreach( $articulo in $articulos )${COL_DET_0}${articulo.cantidad}${COL_DET_0_5}${articulo.articulo}${COL_DET_1_5}${articulo.tipo}#end${LF}
+
+
+#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)            ___________________________
+#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)               ${gerente}
+#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 0)                  AUTORIZA GERENTE
+#FIN_ESTILO()
+#AVANZAR_LINEAS(5)
+#CORTE()

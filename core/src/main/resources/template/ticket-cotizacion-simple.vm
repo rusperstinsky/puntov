@@ -1,0 +1,28 @@
+#parse("template/constantes-impresora.vm")
+#parse("template/macros.vm")
+#define($COLUMNAS)${GS}P${writer.write(32)}${writer.write(32)}#end
+#define($COL_DET_1)${ESC}${writer.write(36)}${writer.write(18)}${writer.write(0)}#end
+#define($COL_DET_2)${ESC}${writer.write(36)}${writer.write(37)}${writer.write(0)}#end
+#define($COL_DET_3)${ESC}${writer.write(36)}${writer.write(70)}${writer.write(0)}#end
+#define($COL_DET_4)${ESC}${writer.write(36)}${writer.write(75)}${writer.write(0)}#end
+## Inicia ticket
+#ALINEAR_CENTRO()#INICIO_ESTILO(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} ${DOBLE_ANCHURA} 0)${company} #FIN_ESTILO()
+${COLUMNAS}
+#LINEA_SEPARACION_SIMPLE()
+#ALINEAR_IZQUIERDA()#INICIO_ESTILO(${FUENTE_A} ${NEGRITA} ${DOBLE_ALTURA} 0 0)COTIZACION ${COL_DET_4}${quoteNbr}#FIN_ESTILO()${CR}
+#LINEA_SEPARACION_SIMPLE()
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0 0)     SUCURSAL: #FIN_ESTILO()${CR} #INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${site}${COL_DET_4}${quoteDate}#FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0 0)    TELEFONOS: #FIN_ESTILO()${CR} #INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${phone} #FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0 0)      ELABORO: #FIN_ESTILO()${CR} #INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${empName} #FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0 0)       NOMBRE: #FIN_ESTILO()${CR} #INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${custName} #FIN_ESTILO()${CR}
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0 0)OBSERVACIONES: #FIN_ESTILO()${CR} #INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${remarks} #FIN_ESTILO()${CR}
+${COLUMNAS}${LF}
+#ALINEAR_IZQUIERDA()#SET_STYLE(${FUENTE_B} ${NEGRITA} 0 0 ${SUBRAYADO})ARTICULO${COL_DET_3}PRECIO
+#foreach( $part in $parts )#INICIO_ESTILO(${FUENTE_B} 0 0 0 0)${part.desc}${COL_DET_3}${part.price}#FIN_ESTILO()${LF}#end
+#INICIO_ESTILO(${FUENTE_B} ${NEGRITA} 0 0 0 0)        Monto Total${COL_DET_3}${totalPrice} #FIN_ESTILO()${CR}
+${LF}
+#ALINEAR_CENTRO()#INICIO_ESTILO(${FUENTE_B} 0 0 0)PRECIOS VALIDOS PRESENTANDO ESTE DOCUMENTO${CR}${LF}
+#ALINEAR_CENTRO()#INICIO_ESTILO(${FUENTE_A} ${DOBLE_ALTURA} 16 0)VIGENTE HASTA EL DIA ${quoteExpires}#FIN_ESTILO()${CR}
+#LINEA_SEPARACION_SIMPLE()
+#AVANZAR_LINEAS(4)
+#CORTE()
